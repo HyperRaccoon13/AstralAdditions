@@ -10,9 +10,11 @@ public class ModParticles {
 
 	public static final DefaultParticleType SHIMMER_BUBBLE = FabricParticleTypes.simple();
 	public static final DefaultParticleType SHIMMER_SPLASH = FabricParticleTypes.simple();
+	public static final DefaultParticleType SHIMMER_BUBBLE_POP = FabricParticleTypes.simple();
 
 	public static void registerParticles() {
 		Registry.register(Registry.PARTICLE_TYPE, new Identifier(AstralAdditions.MOD_ID, "shimmer_bubble"), SHIMMER_BUBBLE);
 		Registry.register(Registry.PARTICLE_TYPE, new Identifier(AstralAdditions.MOD_ID, "shimmer_splash"), SHIMMER_SPLASH);
+		Registry.register(Registry.PARTICLE_TYPE, new Identifier(AstralAdditions.MOD_ID, "shimmer_bubble_pop"), SHIMMER_BUBBLE_POP);
 	}
 }

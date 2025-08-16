@@ -1,5 +1,6 @@
 package com.github.ethanicuss.astraladditions;
 
+import com.github.ethanicuss.astraladditions.compat.create.ModFanProcessingType;
 import com.github.ethanicuss.astraladditions.entities.ModEntities;
 import com.github.ethanicuss.astraladditions.fluids.ModFluids;
 import com.github.ethanicuss.astraladditions.particle.ModParticles;
@@ -28,6 +29,8 @@ public class AstralAdditions implements ModInitializer {
 
 		ModEffects.registerEffects();
 		ModParticles.registerParticles();
+
+		ModFanProcessingType.register();
 
 		LOGGER.info("Astral Additions is active!");
 	}

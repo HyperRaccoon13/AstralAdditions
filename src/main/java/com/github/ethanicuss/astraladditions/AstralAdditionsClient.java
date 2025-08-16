@@ -46,5 +46,7 @@ public class AstralAdditionsClient implements ClientModInitializer {
         ModParticlesClient.registerFactories();
 
         ModItemProperties.register();
+
     }
+
 }

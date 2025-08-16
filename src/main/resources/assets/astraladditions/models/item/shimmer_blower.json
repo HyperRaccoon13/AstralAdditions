@@ -1,6 +1,11 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "item/generated",
   "textures": {
     "layer0": "astraladditions:item/shimmer_blower"
-  }
+  },
+  "overrides": [
+    { "predicate": { "variant": 0.65 }, "model": "astraladditions:item/shimmer_blower_pin_point" },
+    { "predicate": { "variant": 0.95 }, "model": "astraladditions:item/shimmer_blower_fuming" },
+    { "predicate": { "variant": 1.0 }, "model": "astraladditions:item/shimmer_blower_zooming" }
+  ]
 }
