@@ -1,10 +1,12 @@
 package com.github.ethanicuss.astraladditions.registry;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
-import com.github.ethanicuss.astraladditions.fluids.ModFluid;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
 import com.github.ethanicuss.astraladditions.items.*;
+import com.github.ethanicuss.astraladditions.items.tools.AstralHoeItem;
+import com.github.ethanicuss.astraladditions.items.tools.ChromaticVacuumItem;
+import com.github.ethanicuss.astraladditions.items.tools.ShimmerBlowerItem;
+import com.github.ethanicuss.astraladditions.items.tools.ShimmerFishingRodItem;
+import com.github.ethanicuss.astraladditions.items.weapons.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.StatusEffects;
@@ -52,7 +54,7 @@ public class ModItems {
     public static final Item SHOTGUN = new ShotgunItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(512));
     public static final Item MACHINEGUN = new MachinegunItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(1024));
 
-    //Ethan Balance the food ;-;
+    //!Ethan Balance the food ;-;
     public static final Item SHIMMER_FISHING_ROD = new ShimmerFishingRodItem(new Item.Settings().maxCount(1).maxDamage(150).rarity(Rarity.EPIC).group(ItemGroup.TOOLS));
     public static final Item BOTTOMLESS_WATER_BUCKET = new BottomlessBucketItem(Fluids.WATER, new Item.Settings().maxCount(1).group(ItemGroup.TOOLS).rarity(Rarity.UNCOMMON));
     public static final Item SHIMMERING_THREAD = new Item(new Item.Settings().group(ItemGroup.MISC).rarity(Rarity.UNCOMMON));

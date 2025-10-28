@@ -1,18 +1,13 @@
 package com.github.ethanicuss.astraladditions.entities.ender_watcher;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.moondragon.GluttonyBallEntity;
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeEntity;
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeRainEntity;
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.SmallShimmerballEntity;
 import com.github.ethanicuss.astraladditions.util.ModUtils;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
@@ -27,12 +22,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 
 import java.util.EnumSet;
-import java.util.List;
 
 public class EnderWatcherEntity extends BlazeEntity {
 
@@ -42,7 +35,11 @@ public class EnderWatcherEntity extends BlazeEntity {
     }
 
     public static DefaultAttributeContainer.Builder createWatcherAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 120).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.12f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 16.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
+        return HostileEntity.createHostileAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 120)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.12f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 16.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
     }
 
     @Override

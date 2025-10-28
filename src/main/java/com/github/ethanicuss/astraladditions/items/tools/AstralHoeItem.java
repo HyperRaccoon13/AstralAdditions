@@ -1,9 +1,6 @@
-package com.github.ethanicuss.astraladditions.items;
+package com.github.ethanicuss.astraladditions.items.tools;
 
-import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
-import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntity;
-import com.github.ethanicuss.astraladditions.entities.pylon.PylonEntity;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeRainEntity;
 import com.github.ethanicuss.astraladditions.util.ModUtils;
 import com.google.common.collect.ImmutableMap;
@@ -11,7 +8,6 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.mojang.datafixers.util.Pair;
-import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -25,16 +21,13 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;

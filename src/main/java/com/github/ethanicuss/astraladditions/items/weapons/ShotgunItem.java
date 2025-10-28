@@ -1,14 +1,10 @@
-package com.github.ethanicuss.astraladditions.items;
+package com.github.ethanicuss.astraladditions.items.weapons;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.scrap_projectile.ScrapProjectileEntity;
-import com.github.ethanicuss.astraladditions.entities.scrap_projectile.ScrapProjectileEntityRenderer;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArrowItem;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

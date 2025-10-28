@@ -1,12 +1,11 @@
-package com.github.ethanicuss.astraladditions.blocks;
+package com.github.ethanicuss.astraladditions.blocks.jar;
 
+import com.github.ethanicuss.astraladditions.util.ImplementedInventory;
 import com.github.ethanicuss.astraladditions.registry.ModBlocks;
-import com.github.ethanicuss.astraladditions.registry.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.network.Packet;
@@ -17,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 
-public class JarBlockEntity extends BlockEntity implements ImplementedInventory{
+public class JarBlockEntity extends BlockEntity implements ImplementedInventory {
 
     private final DefaultedList<ItemStack> item = DefaultedList.ofSize(1, ItemStack.EMPTY);
     public JarBlockEntity(BlockPos pos, BlockState state) {

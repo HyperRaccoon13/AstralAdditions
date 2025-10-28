@@ -1,4 +1,4 @@
-package com.github.ethanicuss.astraladditions.entities;
+package com.github.ethanicuss.astraladditions.registry;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
 import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
@@ -53,16 +53,6 @@ import net.minecraft.util.registry.Registry;
 
 
 public class ModEntities {
-    /*static Block[] blocks = {
-            Blocks.NETHERRACK,
-            Blocks.END_STONE,
-            Blocks.BLACKSTONE,
-            Blocks.SOUL_SOIL,
-            Blocks.STONE,
-            Blocks.GRASS,
-            ModBlocks.ENDERRACK_BLOCK,
-            ModBlocks.TWISTED_NYLIUM_BLOCK
-    };.specificSpawnBlocks(blocks)*/
     public static final EntityType<MoonmanEntity> MOONMAN = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(AstralAdditions.MOD_ID, "moonman"),
@@ -168,9 +158,7 @@ public class ModEntities {
                     .build()
     );
 
-
-
-    public static void init() {
+    public static void registerEntities() {
         FabricDefaultAttributeRegistry.register(MOONMAN, MoonmanEntity.createMoonmanAttributes());
         FabricDefaultAttributeRegistry.register(HEMOGIANT, HemogiantEntity.createGluttonAttributes());
         FabricDefaultAttributeRegistry.register(VOIDTOUCHED_SKELETON, VoidtouchedSkeletonEntity.createVoidtouchedSkeletonAttributes());
@@ -183,33 +171,33 @@ public class ModEntities {
 
     }
 
-    public static void initClient() {
+    public static void registerClient() {
         EntityRendererRegistry.register(MOONMAN, MoonmanEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_MOONMAN_LAYER, MoonmanEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_MOONMAN_LAYER, MoonmanEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(HEMOGIANT, HemogiantEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_HEMOGIANT_LAYER, HemogiantEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_HEMOGIANT_LAYER, HemogiantEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(VOIDTOUCHED_SKELETON, VoidtouchedSkeletonEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_VOIDTOUCHED_SKELETON_LAYER, SkeletonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_VOIDTOUCHED_SKELETON_LAYER, SkeletonEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(VOIDTOUCHED_ZOMBIE, VoidtouchedZombieEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_VOIDTOUCHED_ZOMBIE_LAYER, VoidtouchedZombieEntityRenderer::getTexturedModelData);
-//SpawnRestriction.register(EntityType.BLAZE, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnIgnoreLightLevel);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_VOIDTOUCHED_ZOMBIE_LAYER, VoidtouchedZombieEntityRenderer::getTexturedModelData);
+
         EntityRendererRegistry.register(SHIMMER_BLAZE, ShimmerBlazeEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_SHIMMER_BLAZE_LAYER, ShimmerBlazeEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_SHIMMER_BLAZE_LAYER, ShimmerBlazeEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(PHAST, PhastEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_PHAST_LAYER, GhastEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_PHAST_LAYER, GhastEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(WHAST, WhastEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_WHAST_LAYER, GhastEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_WHAST_LAYER, GhastEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ENDER_WATCHER, EnderWatcherEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_ENDER_WATCHER_LAYER, EnderWatcherEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_ENDER_WATCHER_LAYER, EnderWatcherEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(GLAZER, GlazerEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(AstralAdditionsClient.MODEL_GLAZER_LAYER, BeeEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_GLAZER_LAYER, BeeEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ENDER_BALL, EnderBallEntityRenderer::new);
 

@@ -2,6 +2,7 @@ package com.github.ethanicuss.astraladditions.registry;
 
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
+import com.github.ethanicuss.astraladditions.recipes.ChromaticVacuumRecipe;
 import com.github.ethanicuss.astraladditions.recipes.DesizerRecipe;
 import com.github.ethanicuss.astraladditions.recipes.TransmuteRecipe;
 import net.minecraft.util.Identifier;

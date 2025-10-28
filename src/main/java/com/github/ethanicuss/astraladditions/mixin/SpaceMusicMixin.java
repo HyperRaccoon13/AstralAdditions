@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(MinecraftClient.class)
-public class SpaceMusic {
+public class SpaceMusicMixin {
     @Shadow public boolean wireFrame;
     @Shadow @Final private MusicTracker musicTracker;
     @Inject(method = "getMusicType", at = @At("HEAD"), locals = LocalCapture.CAPTURE_FAILHARD, cancellable = true)

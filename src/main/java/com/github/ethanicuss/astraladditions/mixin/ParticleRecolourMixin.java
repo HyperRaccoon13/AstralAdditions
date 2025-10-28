@@ -1,18 +1,13 @@
 package com.github.ethanicuss.astraladditions.mixin;
 
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import com.github.ethanicuss.astraladditions.particle.ModParticles;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;

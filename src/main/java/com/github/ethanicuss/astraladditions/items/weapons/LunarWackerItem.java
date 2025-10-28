@@ -1,4 +1,4 @@
-package com.github.ethanicuss.astraladditions.items;
+package com.github.ethanicuss.astraladditions.items.weapons;
 
 import com.github.ethanicuss.astraladditions.util.ModUtils;
 import com.google.common.collect.ImmutableMultimap;
@@ -29,16 +29,16 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SoulstealDaggerItem extends Item {
+public class LunarWackerItem extends Item {
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
     public static final String VARIANT_KEY = "Variant";
 
-    public SoulstealDaggerItem(Settings settings) {
+    public LunarWackerItem(Settings settings) {
         super(settings);
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double)4.5, EntityAttributeModifier.Operation.ADDITION));
-        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)-2, EntityAttributeModifier.Operation.ADDITION));
+        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double)5, EntityAttributeModifier.Operation.ADDITION));
+        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)-3, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 
@@ -48,27 +48,27 @@ public class SoulstealDaggerItem extends Item {
         NbtCompound nbtCompound = stack.getOrCreateNbt();
         String variant = nbtCompound.getString(VARIANT_KEY);
 
-        attacker.world.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), SoundEvents.PARTICLE_SOUL_ESCAPE, SoundCategory.NEUTRAL, 1.1f, 0.8f);
-        attacker.world.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), SoundEvents.BLOCK_SOUL_SOIL_HIT, SoundCategory.NEUTRAL, 1.0f, 1.2f);
+        attacker.world.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), SoundEvents.BLOCK_SHROOMLIGHT_PLACE, SoundCategory.NEUTRAL, 1.1f, 0.8f);
+        attacker.world.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, SoundCategory.NEUTRAL, 1.0f, 1.2f);
         if (!attacker.world.isClient()) {
             stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         }
-
         switch (variant) {
-            case "Life":
-                attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60, 2));
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 90, 0));
+            case "Withering":
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 200, 1));
                 break;
-            case "Death":
-                attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60, 0));
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 120, 3));
+            case "Liftoff":
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 20, 8));
                 break;
             default:
-                attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60, 0));
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 90, 0));
-                break;
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 45, 10));
         }
-        ModUtils.spawnForcedParticles((ServerWorld)attacker.world, ParticleTypes.SOUL_FIRE_FLAME, target.getX(), target.getY()-0.5, target.getZ(), 3, 0.5 * target.world.getRandom().nextFloat(), 0.3, 0.5 * target.world.getRandom().nextFloat(), 0.1);
+        double speed = 1.5;
+        double dx = Math.sin(Math.toRadians(-attacker.getYaw())) * speed;
+        double dy = Math.sin(Math.toRadians(-attacker.getPitch())) * speed;
+        double dz = Math.cos(Math.toRadians(-attacker.getYaw())) * speed;
+        target.setVelocity(dx, dy/2 + 0.6, dz);
+        ModUtils.spawnForcedParticles((ServerWorld)attacker.world, ParticleTypes.CLOUD, target.getX(), target.getY()-1, target.getZ(), 3, 0.5 * target.world.getRandom().nextFloat(), 0.3, 0.5 * target.world.getRandom().nextFloat(), 0.2);
         return true;
     }
 
@@ -92,7 +92,7 @@ public class SoulstealDaggerItem extends Item {
     public void appendTooltip(ItemStack itemStack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (itemStack.hasNbt()) {
             NbtCompound nbtCompound = itemStack.getNbt();
-            tooltip.add(new LiteralText("Steal the life of foes").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(new LiteralText("Boing!").formatted(Formatting.DARK_PURPLE));
             if (String.valueOf(nbtCompound.getString(VARIANT_KEY)) != "") {
                 String string = String.join(" ", "Variant:", String.valueOf(nbtCompound.getString(VARIANT_KEY)));
                 if (!StringHelper.isEmpty(string)) {
@@ -101,5 +101,4 @@ public class SoulstealDaggerItem extends Item {
             }
         }
     }
-
 }

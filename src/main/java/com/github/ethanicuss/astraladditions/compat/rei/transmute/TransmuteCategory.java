@@ -2,8 +2,7 @@ package com.github.ethanicuss.astraladditions.compat.rei.transmute;
 
 import com.github.ethanicuss.astraladditions.compat.rei.AstralAdditionsREIClientPlugin;
 import com.github.ethanicuss.astraladditions.compat.rei.widgets.CurvedArrowWidget;
-import com.github.ethanicuss.astraladditions.compat.rei.widgets.RotatedArrowWidget;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import com.google.common.collect.Lists;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;

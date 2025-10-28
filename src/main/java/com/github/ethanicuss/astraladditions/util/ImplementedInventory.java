@@ -1,4 +1,4 @@
-package com.github.ethanicuss.astraladditions.blocks;
+package com.github.ethanicuss.astraladditions.util;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;

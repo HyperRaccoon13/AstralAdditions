@@ -5,6 +5,8 @@ import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
 import com.github.ethanicuss.astraladditions.entities.hemogiant.HemogiantEntity;
 import com.github.ethanicuss.astraladditions.entities.hemogiant.HemogiantEntityModel;
 import com.github.ethanicuss.astraladditions.entities.hemogiant.HemogiantEyesFeatureRenderer;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntityModelLayer;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -13,7 +15,7 @@ import net.minecraft.util.Identifier;
 public class EnderWatcherEntityRenderer extends MobEntityRenderer<EnderWatcherEntity, EnderWatcherEntityModel<EnderWatcherEntity>> {
 
     public EnderWatcherEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new EnderWatcherEntityModel(context.getPart(AstralAdditionsClient.MODEL_ENDER_WATCHER_LAYER)), 0.5f);
+        super(context, new EnderWatcherEntityModel(context.getPart(ModEntityModelLayer.MODEL_ENDER_WATCHER_LAYER)), 0.5f);
     }
 
     @Override

@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
-public abstract class ModFluid extends FlowableFluid {
+public abstract class ModFlowableFluid extends FlowableFluid {
 
     /**
      * @return whether the given fluid an instance of this fluid

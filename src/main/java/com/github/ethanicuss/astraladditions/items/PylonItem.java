@@ -1,20 +1,12 @@
 package com.github.ethanicuss.astraladditions.items;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
-import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntity;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.pylon.PylonEntity;
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeEntity;
-import com.github.ethanicuss.astraladditions.registry.ModItems;
 import com.github.ethanicuss.astraladditions.util.ModUtils;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -31,12 +23,8 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.*;
 import net.minecraft.util.math.Box;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.apache.logging.log4j.core.jmx.Server;
 import org.jetbrains.annotations.Nullable;
-import org.lwjgl.system.CallbackI;
 
 import java.util.EnumSet;
 import java.util.List;

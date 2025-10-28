@@ -49,6 +49,11 @@ public class GlazerEntity extends BeeEntity {
     }
 
     public static DefaultAttributeContainer.Builder createGlazerAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 18.0).add(EntityAttributes.GENERIC_FLYING_SPEED, 0.8f).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.8f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
+        return MobEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 18.0)
+                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.8f)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.8f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
     }
 }

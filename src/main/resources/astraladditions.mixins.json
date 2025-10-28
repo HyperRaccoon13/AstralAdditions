@@ -5,8 +5,15 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "EntityAccessor",
-    "ShimmerEffect",
+    "ShimmerEffectMixin",
+    "ItemEntityMixin",
+    "ParticleRecolourMixin",
+
     "betterdragon.AbstractPhaseAccessor",
+    "betterdragon.DragonAccessor",
+    "betterdragon.HoverPhaseAccessor",
+    "betterdragon.LandingPhaseAccessor",
+    "betterdragon.SittingFlamingPhaseAccessor",
     "betterdragon.BetterAbstractSittingPhase",
     "betterdragon.BetterChargingPlayerPhase",
     "betterdragon.BetterDragon",
@@ -14,21 +21,15 @@
     "betterdragon.BetterLandingPhase",
     "betterdragon.BetterSittingAttackPhase",
     "betterdragon.BetterSittingFlamingPhase",
-    "betterdragon.DragonAccessor",
-    "betterdragon.HoverPhaseAccessor",
-    "betterdragon.LandingPhaseAccessor",
-    "betterdragon.SittingFlamingPhaseAccessor",
-    "ItemEntityMixin",
-    "ParticleRecolourMixin",
+
     "fishing.FishingBobberEntityAccessor",
     "fishing.FishingBobberEntityMixin",
     "fishing.BottomlessBucketItemMixin"
 
   ],
 
-
   "client": [
-    "SpaceMusic"
+    "SpaceMusicMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,4 +1,4 @@
-package com.github.ethanicuss.astraladditions.blocks;
+package com.github.ethanicuss.astraladditions.blocks.desizer;
 
 import com.github.ethanicuss.astraladditions.recipes.DesizerRecipe;
 import com.github.ethanicuss.astraladditions.recipes.DesizerRecipes;
@@ -93,10 +93,10 @@ public class DesizerControllerBlock extends HorizontalFacingBlock{
         final String yMath = yDiff == 1 ? "top" : yDiff == -1 ? "bottom" : "middle";
 
         switch (direction.getOpposite()) {
-            case NORTH -> positionKey = yMath + (xDiff == -1 ? "left" : xDiff == 1 ? "right" : "middle");
-            case EAST  -> positionKey = yMath + (zDiff == -1 ? "left" : zDiff == 1 ? "right" : "middle");
-            case SOUTH -> positionKey = yMath + (xDiff == 1 ? "left" : xDiff == -1 ? "right" : "middle");
-            case WEST  -> positionKey = yMath + (zDiff == 1 ? "left" : zDiff == -1 ? "right" : "middle");
+            case NORTH -> positionKey = yMath + (xDiff == -1 ? "left" : xDiff == 1  ? "right" : "middle");
+            case EAST  -> positionKey = yMath + (zDiff == -1 ? "left" : zDiff == 1  ? "right" : "middle");
+            case SOUTH -> positionKey = yMath + (xDiff == 1  ? "left" : xDiff == -1 ? "right" : "middle");
+            case WEST  -> positionKey = yMath + (zDiff == 1  ? "left" : zDiff == -1 ? "right" : "middle");
         }
 
         assert positionKey != null;

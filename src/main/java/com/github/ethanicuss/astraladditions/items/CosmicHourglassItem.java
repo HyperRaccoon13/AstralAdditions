@@ -1,31 +1,20 @@
 package com.github.ethanicuss.astraladditions.items;
 
-import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
-import com.github.ethanicuss.astraladditions.entities.pylon.PylonEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.packet.s2c.play.PlayerPositionLookS2CPacket;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypeFilter;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
-import java.util.EnumSet;
-import java.util.List;
 
 public class CosmicHourglassItem extends Item {
 

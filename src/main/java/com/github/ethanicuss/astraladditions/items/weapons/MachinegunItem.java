@@ -1,4 +1,4 @@
-package com.github.ethanicuss.astraladditions.items;
+package com.github.ethanicuss.astraladditions.items.weapons;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.LivingEntity;

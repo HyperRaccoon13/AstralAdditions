@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemProperties {
 
-	public static void register() {
+	public static void registerClient() {
 		ModelPredicateProviderRegistry.register(ModItems.SHIMMER_FISHING_ROD, new Identifier("cast"), (stack, world, entity, seed) -> {
 			if (entity instanceof PlayerEntity player) {
 				boolean usingMainHand = player.getMainHandStack() == stack;

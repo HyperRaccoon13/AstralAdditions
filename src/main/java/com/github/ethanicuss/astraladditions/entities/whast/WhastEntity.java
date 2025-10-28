@@ -51,7 +51,9 @@ public class WhastEntity extends GhastEntity {
     }
 
     public static DefaultAttributeContainer.Builder createWhastAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 25.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0);
+        return MobEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 25.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0);
     }
 
     @Override

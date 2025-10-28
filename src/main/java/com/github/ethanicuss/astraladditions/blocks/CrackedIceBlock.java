@@ -4,11 +4,7 @@ import com.github.ethanicuss.astraladditions.util.ModUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.FallingBlockEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.BlockTags;
@@ -23,7 +19,6 @@ public class CrackedIceBlock extends Block {
 
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if (canFallThrough(world.getBlockState(pos.down())) && pos.getY() >= world.getBottomY() && !world.isClient()) {
-            FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
             ModUtils.spawnForcedParticles((ServerWorld)world, ParticleTypes.SNOWFLAKE, pos.getX(), pos.getY(), pos.getZ(), 20, 0.5, 0.5, 0.5, 0.3);
             ModUtils.spawnForcedParticles((ServerWorld)world, ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX(), pos.getY(), pos.getZ(), 3, 0.5, 0.5, 0.5, 0);
         }

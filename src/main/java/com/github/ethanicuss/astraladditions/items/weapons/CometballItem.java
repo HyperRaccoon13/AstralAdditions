@@ -1,12 +1,9 @@
-package com.github.ethanicuss.astraladditions.items;
+package com.github.ethanicuss.astraladditions.items.weapons;
 
-import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;

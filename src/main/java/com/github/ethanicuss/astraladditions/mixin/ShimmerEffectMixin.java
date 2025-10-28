@@ -1,8 +1,7 @@
 package com.github.ethanicuss.astraladditions.mixin;
 
-import com.github.ethanicuss.astraladditions.registry.ModEffects;
 import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -20,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 
 @Mixin(Entity.class)
-public class ShimmerEffect {
+public class ShimmerEffectMixin {
 
     @Inject(method = "baseTick", at = @At("HEAD"))
     public void baseTick(CallbackInfo ci) {

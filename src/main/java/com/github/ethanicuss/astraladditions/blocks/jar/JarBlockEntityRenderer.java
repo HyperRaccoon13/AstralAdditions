@@ -1,23 +1,16 @@
-package com.github.ethanicuss.astraladditions.blocks;
+package com.github.ethanicuss.astraladditions.blocks.jar;
 
-import com.github.ethanicuss.astraladditions.registry.ModItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.CampfireBlock;
-import net.minecraft.block.entity.CampfireBlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3f;
 
 @Environment(value= EnvType.CLIENT)

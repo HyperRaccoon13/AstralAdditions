@@ -18,10 +18,10 @@ import com.github.ethanicuss.astraladditions.compat.rei.yttr.soaking.SoakingCate
 import com.github.ethanicuss.astraladditions.compat.rei.yttr.soaking.SoakingDisplay;
 import com.github.ethanicuss.astraladditions.compat.rei.yttr.voidfiltering.VoidFilteringCategory;
 import com.github.ethanicuss.astraladditions.compat.rei.yttr.voidfiltering.VoidFilteringDisplay;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import com.github.ethanicuss.astraladditions.recipes.DesizerRecipe;
 import com.github.ethanicuss.astraladditions.recipes.TransmuteRecipe;
-import com.github.ethanicuss.astraladditions.registry.ChromaticVacuumRecipe;
+import com.github.ethanicuss.astraladditions.recipes.ChromaticVacuumRecipe;
 import com.github.ethanicuss.astraladditions.registry.ModBlocks;
 import com.github.ethanicuss.astraladditions.registry.ModItems;
 import com.unascribed.yttr.init.YEnchantments;

@@ -1,15 +1,12 @@
 package com.github.ethanicuss.astraladditions.items;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.boomerang.BoomerangEntity;
-import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntity;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -17,15 +14,11 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
-import net.minecraft.util.StringHelper;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Objects;
 
 public class BoomerangItem
         extends Item {

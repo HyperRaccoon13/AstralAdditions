@@ -1,6 +1,6 @@
-package com.github.ethanicuss.astraladditions.items;
+package com.github.ethanicuss.astraladditions.items.tools;
 
-import com.github.ethanicuss.astraladditions.registry.ChromaticVacuumRecipe;
+import com.github.ethanicuss.astraladditions.recipes.ChromaticVacuumRecipe;
 import com.github.ethanicuss.astraladditions.util.ModUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -15,7 +15,6 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

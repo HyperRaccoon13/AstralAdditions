@@ -1,4 +1,4 @@
-package com.github.ethanicuss.astraladditions.items;
+package com.github.ethanicuss.astraladditions.items.tools;
 
 
 import com.github.ethanicuss.astraladditions.entities.shimmerfishingrod.ShimmerFishingBobberEntity;
