@@ -1,7 +1,6 @@
 package com.github.ethanicuss.astraladditions.registry;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
 import com.github.ethanicuss.astraladditions.entities.boomerang.BoomerangEntity;
 import com.github.ethanicuss.astraladditions.entities.boomerang.BoomerangEntityRenderer;
 import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntity;

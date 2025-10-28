@@ -1,18 +1,15 @@
 package com.github.ethanicuss.astraladditions.entities.pylon;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.meteor_mitts.MeteorPunchEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.*;
-import net.minecraft.client.render.entity.EnderDragonEntityRenderer;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.*;
 

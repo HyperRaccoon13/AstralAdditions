@@ -1,24 +1,14 @@
 package com.github.ethanicuss.astraladditions.recipes;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import net.fabricmc.fabric.impl.registry.sync.FabricRegistry;
-import net.fabricmc.fabric.impl.registry.sync.FabricRegistryInit;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.AbstractCookingRecipe;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.tag.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntryList;
-import net.minecraft.util.registry.RegistryKey;
 
-import java.io.File;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

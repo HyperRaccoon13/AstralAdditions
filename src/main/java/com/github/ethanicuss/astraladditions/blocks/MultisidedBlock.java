@@ -2,7 +2,6 @@ package com.github.ethanicuss.astraladditions.blocks;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.item.Wearable;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.util.math.Direction;
 

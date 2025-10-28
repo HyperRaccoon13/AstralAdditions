@@ -1,7 +1,6 @@
 package com.github.ethanicuss.astraladditions.entities.cometball;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.moondragon.GluttonyBallEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.OverlayTexture;

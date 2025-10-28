@@ -1,7 +1,6 @@
 package com.github.ethanicuss.astraladditions.entities.boomerang;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;

@@ -1,6 +1,5 @@
 package com.github.ethanicuss.astraladditions.entities.meteor_mitts;
 
-import com.github.ethanicuss.astraladditions.AstralAdditions;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

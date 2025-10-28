@@ -1,7 +1,6 @@
 package com.github.ethanicuss.astraladditions.entities.voidtouchedzombie;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
 import com.github.ethanicuss.astraladditions.registry.ModEntityModelLayer;
 import net.minecraft.client.model.Dilation;
 import net.minecraft.client.model.TexturedModelData;

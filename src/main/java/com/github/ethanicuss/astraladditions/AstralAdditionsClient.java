@@ -1,14 +1,12 @@
 package com.github.ethanicuss.astraladditions;
 
-import com.github.ethanicuss.astraladditions.particle.ModParticles;
+import com.github.ethanicuss.astraladditions.registry.ModParticles;
 import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import com.github.ethanicuss.astraladditions.playertracker.PlayerTracker;
 import com.github.ethanicuss.astraladditions.registry.ModBlocks;
 import com.github.ethanicuss.astraladditions.registry.ModItemProperties;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

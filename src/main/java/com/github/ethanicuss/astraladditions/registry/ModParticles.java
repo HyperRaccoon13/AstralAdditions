@@ -1,4 +1,4 @@
-package com.github.ethanicuss.astraladditions.particle;
+package com.github.ethanicuss.astraladditions.registry;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
 import com.github.ethanicuss.astraladditions.particle.shimmer.ShimmerBubbleParticle;

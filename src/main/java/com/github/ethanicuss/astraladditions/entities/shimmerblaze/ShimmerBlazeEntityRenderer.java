@@ -1,7 +1,6 @@
 package com.github.ethanicuss.astraladditions.entities.shimmerblaze;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
 import com.github.ethanicuss.astraladditions.registry.ModEntityModelLayer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

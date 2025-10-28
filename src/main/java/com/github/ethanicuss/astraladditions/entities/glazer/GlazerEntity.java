@@ -6,10 +6,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtHelper;
-import net.minecraft.util.annotation.Debug;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class GlazerEntity extends BeeEntity {

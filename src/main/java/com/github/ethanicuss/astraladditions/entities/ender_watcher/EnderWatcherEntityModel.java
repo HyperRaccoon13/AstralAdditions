@@ -6,7 +6,6 @@ package com.github.ethanicuss.astraladditions.entities.ender_watcher;
 
 
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;

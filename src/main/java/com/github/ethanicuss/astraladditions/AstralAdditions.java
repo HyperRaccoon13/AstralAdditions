@@ -2,7 +2,7 @@ package com.github.ethanicuss.astraladditions;
 
 import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.registry.ModFluids;
-import com.github.ethanicuss.astraladditions.particle.ModParticles;
+import com.github.ethanicuss.astraladditions.registry.ModParticles;
 import com.github.ethanicuss.astraladditions.playertracker.WorldRegister;
 import com.github.ethanicuss.astraladditions.registry.*;
 import net.fabricmc.api.ModInitializer;

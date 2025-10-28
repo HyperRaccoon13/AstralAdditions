@@ -1,7 +1,7 @@
 package com.github.ethanicuss.astraladditions.mixin;
 
 import com.github.ethanicuss.astraladditions.registry.ModFluids;
-import com.github.ethanicuss.astraladditions.particle.ModParticles;
+import com.github.ethanicuss.astraladditions.registry.ModParticles;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;

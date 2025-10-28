@@ -1,13 +1,7 @@
 package com.github.ethanicuss.astraladditions.entities.ender_watcher;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
-import com.github.ethanicuss.astraladditions.entities.hemogiant.HemogiantEntity;
-import com.github.ethanicuss.astraladditions.entities.hemogiant.HemogiantEntityModel;
-import com.github.ethanicuss.astraladditions.entities.hemogiant.HemogiantEyesFeatureRenderer;
-import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.registry.ModEntityModelLayer;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;

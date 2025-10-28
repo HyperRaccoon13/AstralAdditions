@@ -1,10 +1,7 @@
 package com.github.ethanicuss.astraladditions.items;
 
-import com.github.ethanicuss.astraladditions.registry.ModItems;
 import com.github.ethanicuss.astraladditions.util.ModUtils;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -12,17 +9,8 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
-import net.minecraft.util.StringHelper;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 
 public class OHNOBrokenItem extends Item {//Orbital Homeward Navigation Orb - O.H-N.O
 
