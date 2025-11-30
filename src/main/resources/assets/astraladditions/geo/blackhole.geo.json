@@ -1,0 +1,96 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.blackhole",
+				"texture_width": 48,
+				"texture_height": 36,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "ring",
+					"pivot": [-0.13709, 16.4092, 0],
+					"rotation": [0, 0, -20],
+					"cubes": [
+						{
+							"origin": [-12.13709, 16.4092, -14],
+							"size": [24, 0, 3],
+							"uv": {
+								"north": {"uv": [0, 30], "uv_size": [24, 0]},
+								"east": {"uv": [-3, 30], "uv_size": [3, 0]},
+								"south": {"uv": [27, 30], "uv_size": [24, 0]},
+								"west": {"uv": [24, 30], "uv_size": [3, 0]},
+								"up": {"uv": [0, 27], "uv_size": [24, 3]},
+								"down": {"uv": [24, 30], "uv_size": [24, -3]}
+							}
+						},
+						{
+							"origin": [-12.13709, 16.4092, 11],
+							"size": [24, 0, 3],
+							"uv": {
+								"north": {"uv": [0, 36], "uv_size": [24, 0]},
+								"east": {"uv": [-3, 36], "uv_size": [3, 0]},
+								"south": {"uv": [27, 36], "uv_size": [24, 0]},
+								"west": {"uv": [24, 36], "uv_size": [3, 0]},
+								"up": {"uv": [0, 33], "uv_size": [24, 3]},
+								"down": {"uv": [24, 36], "uv_size": [24, -3]}
+							}
+						},
+						{
+							"origin": [-24.63709, 16.4092, -1.5],
+							"size": [24, 0, 3],
+							"pivot": [-12.63709, 16.4092, 0],
+							"rotation": [0, -90, 0],
+							"uv": {
+								"north": {"uv": [0, 33], "uv_size": [24, 0]},
+								"east": {"uv": [-3, 33], "uv_size": [3, 0]},
+								"south": {"uv": [27, 33], "uv_size": [24, 0]},
+								"west": {"uv": [24, 33], "uv_size": [3, 0]},
+								"up": {"uv": [0, 30], "uv_size": [24, 3]},
+								"down": {"uv": [24, 33], "uv_size": [24, -3]}
+							}
+						},
+						{
+							"origin": [0.36291, 16.4092, -1.5],
+							"size": [24, 0, 3],
+							"pivot": [12.36291, 16.4092, 0],
+							"rotation": [-90, -90, 90],
+							"uv": {
+								"north": {"uv": [0, 27], "uv_size": [24, 0]},
+								"east": {"uv": [-3, 27], "uv_size": [3, 0]},
+								"south": {"uv": [27, 27], "uv_size": [24, 0]},
+								"west": {"uv": [24, 27], "uv_size": [3, 0]},
+								"up": {"uv": [0, 24], "uv_size": [24, 3]},
+								"down": {"uv": [24, 27], "uv_size": [24, -3]}
+							}
+						}
+					]
+				},
+				{
+					"name": "blackhole",
+					"pivot": [-0.18477, 16.95213, 0.06404],
+					"cubes": [
+						{
+							"origin": [-7, 10, -7],
+							"size": [14, 14, 14],
+							"pivot": [-0.5, 16.5, -1.5],
+							"rotation": [0, -10, 10],
+							"uv": {
+								"north": {"uv": [0, 12], "uv_size": [12, 12]},
+								"east": {"uv": [0, 12], "uv_size": [12, 12]},
+								"south": {"uv": [0, 12], "uv_size": [12, 12]},
+								"west": {"uv": [0, 12], "uv_size": [12, 12]},
+								"up": {"uv": [12, 24], "uv_size": [-12, -12]},
+								"down": {"uv": [12, 24], "uv_size": [-12, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

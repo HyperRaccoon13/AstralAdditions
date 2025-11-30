@@ -47,9 +47,9 @@ public class EnderBallEntity extends ExplosiveProjectileEntity {
         }
         if (timer < 20) {
             timer--;
-            ModUtils.pullPlayer(this, this.world, 0.01, 0, this.getX(), this.getZ(), this.getX()-16, this.getY()-32, this.getZ()-16, this.getX()+16, this.getY()+32, this.getZ()+16);
+            ModUtils.pullPlayer(this, this.world, false, 0.01, 0, this.getX(), this.getZ(), this.getX()-16, this.getY()-32, this.getZ()-16, this.getX()+16, this.getY()+32, this.getZ()+16);
             if (timer == 0){
-                ModUtils.pullPlayer(this, this.world, -0.1, -0.01, this.getX(), this.getZ(), this.getX()-16, this.getY()-32, this.getZ()-16, this.getX()+16, this.getY()+32, this.getZ()+16);
+                ModUtils.pullPlayer(this, this.world, false, -0.1, -0.01, this.getX(), this.getZ(), this.getX()-16, this.getY()-32, this.getZ()-16, this.getX()+16, this.getY()+32, this.getZ()+16);
                 int rad = 3;
                 for (var _y = 0; _y < this.world.getHeight(); _y++){
                     for (var _x = 0; _x < rad; _x++){

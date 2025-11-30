@@ -32,16 +32,24 @@ public class ModUtils {
         }
     }
 
-    //Currently the pulling method sucks in all entities and doesn't return anything. Might change in the future. You can look at EnderBallEntity code to see how to use this.
-    public static void pullPlayer(Entity entityActor, World world, double strength, double vStrength, double entityPosX, double entityPosZ, double rangeX1, double rangeY1, double rangeZ1, double rangeX2, double rangeY2, double rangeZ2){
-
-        //PlayerEntity p = this.world.getClosestPlayer(this, 32);
+    //Currently can only pull to entity. Might change in the future. You can look at EnderBallEntity code to see how to use this.
+    public static void pullPlayer(Entity entityActor, World world, boolean onlyPlayers, double strength, double vStrength, double entityPosX, double entityPosZ, double rangeX1, double rangeY1, double rangeZ1, double rangeX2, double rangeY2, double rangeZ2){
+//        if (!type) {
+//            List<Entity> pl = world.getOtherEntities(entityActor, new Box(rangeX1, rangeY1, rangeZ1, rangeX2, rangeY2, rangeZ2));
+//        }
+//        if (type) {
+//            List<PlayerEntity> pl = world.getPlayers();
+//        }
         List<Entity> pl = world.getOtherEntities(entityActor, new Box(rangeX1, rangeY1, rangeZ1, rangeX2, rangeY2, rangeZ2));
         for (Entity p : pl) {
             if (p instanceof LivingEntity){
                 int strMult = 1;
                 if (!(p instanceof PlayerEntity)) {
                     strMult *= 2;
+                    //setting onlyPlayers to true will cause it to only pull players
+                    if (onlyPlayers) {
+                    strMult = 0;
+                    }
                 }
                 double xdiff = entityPosX - p.getX();
                 double zdiff = entityPosZ - p.getZ();
@@ -69,5 +77,6 @@ public class ModUtils {
             }
         }
     }
+
 }
 
