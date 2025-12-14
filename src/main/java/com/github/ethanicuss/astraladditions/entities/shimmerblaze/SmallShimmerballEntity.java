@@ -59,13 +59,6 @@ public class SmallShimmerballEntity extends SmallFireballEntity {
         Explosion.DestructionType destructionType = Explosion.DestructionType.NONE;
         this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1.5f, destructionType);
         this.discard();
-        /*Entity entity = entityHitResult.getEntity();
-        Entity entity2 = this.getOwner();
-        boolean bl = entity.damage(DamageSource.fireball(this, entity2), 5.0f);
-        if (!bl) {
-        } else if (entity2 instanceof LivingEntity) {
-            this.applyDamageEffects((LivingEntity)entity2, entity);
-        }*/
     }
 
     @Override

@@ -16,7 +16,6 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.Box;
-
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.tag.TagKey;
@@ -26,12 +25,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.spongepowered.include.com.google.gson.JsonObject;
 
-import java.io.StringReader;
 import java.util.List;
 import net.minecraft.world.RaycastContext;
-import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
 public class ModUtils {
@@ -47,6 +43,45 @@ public class ModUtils {
 		}
 	}
 
+	public static void pullPlayer(Entity entityActor, World world, boolean onlyPlayers, double strength, double vStrength, double entityPosX, double entityPosZ, double rangeX1, double rangeY1, double rangeZ1, double rangeX2, double rangeY2, double rangeZ2) {
+
+		List<Entity> pl = world.getOtherEntities(entityActor, new Box(rangeX1, rangeY1, rangeZ1, rangeX2, rangeY2, rangeZ2));
+		for (Entity p : pl) {
+			if (p instanceof LivingEntity) {
+				int strMult = 1;
+				if (!(p instanceof PlayerEntity)) {
+					strMult *= 2;
+					//setting onlyPlayers to true will cause it to only pull players
+					if (onlyPlayers) {
+						strMult = 0;
+					}
+				}
+				double xdiff = entityPosX - p.getX();
+				double zdiff = entityPosZ - p.getZ();
+				double dist = Math.sqrt(Math.pow(xdiff, 2) + Math.pow(zdiff, 2));
+				if (dist < 10) {
+					if (xdiff == 0) {
+						xdiff = 0.01;
+					}
+					if (zdiff == 0) {
+						zdiff = 0.01;
+					}
+					double angleX = Math.atan(Math.abs(zdiff) / xdiff);
+					double angleZ = Math.atan(Math.abs(xdiff) / zdiff);
+					double cosX = Math.cos(angleX);
+					double cosZ = Math.cos(angleZ);
+					if (cosX == 0) {
+						cosX = 0.01;
+					}
+					if (cosZ == 0) {
+						cosZ = 0.01;
+					}
+					dist = -dist + 10;
+					p.addVelocity(dist * cosX * strength * strMult * (Math.abs(angleX) / angleX), dist * vStrength * strMult, dist * cosZ * strength * strMult * (Math.abs(angleZ) / angleZ));
+				}
+			}
+		}
+	}
 
 	//? lets us easily add custom fluid bottling
 	public static void addPotionBottlingHandler(TagKey<Fluid> fluidTag, Potion potion) {
@@ -66,59 +101,6 @@ public class ModUtils {
 			world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
 			world.emitGameEvent(player, GameEvent.FLUID_PICKUP, pos);
 			player.incrementStat(Stats.USED.getOrCreateStat(Items.GLASS_BOTTLE));
-    public static void playSound(ServerWorld world, double x, double y, double z, SoundEvent sound, SoundCategory category, float vol, float pitch, boolean falloff) {
-        for (ServerPlayerEntity player : world.getPlayers()) {
-            player.world.playSound(x, y, z, sound, category, vol, pitch, falloff);
-        }
-    }
-
-    //Currently can only pull to entity. Might change in the future. You can look at EnderBallEntity code to see how to use this.
-    public static void pullPlayer(Entity entityActor, World world, boolean onlyPlayers, double strength, double vStrength, double entityPosX, double entityPosZ, double rangeX1, double rangeY1, double rangeZ1, double rangeX2, double rangeY2, double rangeZ2){
-//        if (!type) {
-//            List<Entity> pl = world.getOtherEntities(entityActor, new Box(rangeX1, rangeY1, rangeZ1, rangeX2, rangeY2, rangeZ2));
-//        }
-//        if (type) {
-//            List<PlayerEntity> pl = world.getPlayers();
-//        }
-        List<Entity> pl = world.getOtherEntities(entityActor, new Box(rangeX1, rangeY1, rangeZ1, rangeX2, rangeY2, rangeZ2));
-        for (Entity p : pl) {
-            if (p instanceof LivingEntity){
-                int strMult = 1;
-                if (!(p instanceof PlayerEntity)) {
-                    strMult *= 2;
-                    //setting onlyPlayers to true will cause it to only pull players
-                    if (onlyPlayers) {
-                    strMult = 0;
-                    }
-                }
-                double xdiff = entityPosX - p.getX();
-                double zdiff = entityPosZ - p.getZ();
-                double dist = Math.sqrt(Math.pow(xdiff, 2) + Math.pow(zdiff, 2));
-                if (dist < 10) {
-                    if (xdiff == 0) {
-                        xdiff = 0.01;
-                    }
-                    if (zdiff == 0) {
-                        zdiff = 0.01;
-                    }
-                    double angleX = Math.atan(Math.abs(zdiff) / xdiff);
-                    double angleZ = Math.atan(Math.abs(xdiff) / zdiff);
-                    double cosX = Math.cos(angleX);
-                    double cosZ = Math.cos(angleZ);
-                    if (cosX == 0) {
-                        cosX = 0.01;
-                    }
-                    if (cosZ == 0) {
-                        cosZ = 0.01;
-                    }
-                    dist = -dist + 10;
-                    p.addVelocity(dist * cosX * strength * strMult * (Math.abs(angleX) / angleX), dist * vStrength * strMult, dist * cosZ * strength * strMult * (Math.abs(angleZ) / angleZ));
-                }
-            }
-        }
-    }
-
-}
 
 			ItemStack exchanged = ItemUsage.exchangeStack(inHand, player, out);
 

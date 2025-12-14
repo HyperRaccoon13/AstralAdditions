@@ -23,4 +23,6 @@ public class ModEntityModelLayer {
 			new EntityModelLayer(new Identifier(AstralAdditions.MOD_ID, "ender_watcher"), "main");
 	public static final EntityModelLayer MODEL_GLAZER_LAYER =
 			new EntityModelLayer(new Identifier(AstralAdditions.MOD_ID, "glazer"), "main");
+	public static final EntityModelLayer MODEL_COGFLY_LAYER =
+			new EntityModelLayer(new Identifier(AstralAdditions.MOD_ID, "cogfly"), "main");
 }

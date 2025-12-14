@@ -215,6 +215,9 @@ public class ModEntities {
         EntityRendererRegistry.register(GLAZER, GlazerEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_GLAZER_LAYER, BeeEntityModel::getTexturedModelData);
 
+        EntityRendererRegistry.register(ModEntities.COGFLY, CogflyEntityRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_COGFLY_LAYER, CogflyEntityModel::getTexturedModelData);
+
         EntityRendererRegistry.register(ENDER_BALL, EnderBallEntityRenderer::new);
 
         EntityRendererRegistry.register(GLUTTONY_BALL, GluttonyBallEntityRenderer::new);
@@ -238,8 +241,5 @@ public class ModEntities {
         EntityRendererRegistry.register(BOOMERANG, BoomerangEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.BLACKHOLE, BlackholeEntityRenderer::new);
-
-        EntityRendererRegistry.register(ModEntities.COGFLY, CogflyEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_COGFLY_LAYER, CogflyEntityModel::getTexturedModelData);
     }
 }

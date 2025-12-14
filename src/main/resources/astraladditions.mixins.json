@@ -5,14 +5,11 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "ParryEffectMixin",
-    "EntityAccessor",
     "ShimmerEffectMixin",
-    "ItemEntityMixin",
-
+    "EntityAccessor",
     "ItemEntityMixin",
     "NerfedShulkers",
     "ParticleRecolourMixin",
-    "ShimmerEffect",
     "betterdragon.AbstractPhaseAccessor",
     "betterdragon.DragonAccessor",
     "betterdragon.HoverPhaseAccessor",

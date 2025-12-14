@@ -42,6 +42,7 @@
 	"item.astraladditions.disc_astral_lakes_remix.desc": "Astral Lakes (ethanicuss' meow moew :wolfGif: remix) - ethanicuss",
 	"item.astraladditions.rapier": "Rapier",
 	"item.astraladditions.parry_shield": "Round Shield",
+	"item.astraladditions.cogfly": "Cogfly",
 
 	"item.astraladditions.shimmer_fishing_rod": "Shimmer Fishing Rod",
 	"item.astraladditions.shimmering_thread": "Shimmering Thread",
@@ -114,7 +115,7 @@
 
 	"effect.astraladditions.sink": "Sinking",
 	"effect.astraladditions.parry": "Parry",
-	"effect.astraladditions.sink": "Sinking",
+	"effect.astraladditions.frost": "Frost",
 
 	"item.minecraft.potion.effect.shimmer": "Bottle of Shimmer",
 	"item.minecraft.splash_potion.effect.shimmer": "Splash Bottle of Shimmer",
@@ -124,6 +125,8 @@
 	"item.minecraft.potion.effect.sputum": "Bottle of Sputum",
 	"item.minecraft.splash_potion.effect.sputum": "Splash Bottle of Sputum",
 	"item.minecraft.lingering_potion.effect.sputum": "Lingering Bottle of Sputum",
-	"item.minecraft.tipped_arrow.effect.sputum": "Arrow of Sputum"
+	"item.minecraft.tipped_arrow.effect.sputum": "Arrow of Sputum",
+
+	"tooltip.astraladditions.cogfly": "W.I.P for 2.2"
 
 }

@@ -48,9 +48,6 @@ public class JarBlock extends Block implements BlockEntityProvider {
             }
         }
         world.updateListeners(pos, oldState, state, Block.NOTIFY_LISTENERS);
-        //DebugInfoSender.sendNeighborUpdate(world, pos);
-        //world.updateNeighbor(pos, this, pos);
-        //world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
 
         BlockPos goofyPos = new BlockPos(pos.getX(), -64, pos.getZ());
         BlockState goofyState = world.getBlockState(goofyPos);

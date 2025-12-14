@@ -31,8 +31,6 @@ public class JarBlockEntity extends BlockEntity implements ImplementedInventory 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
-        //this.item.set(0, ItemStack.EMPTY);
-        //this.item.set(1, ItemStack.EMPTY);
         Inventories.readNbt(nbt, this.item);
     }
 
@@ -43,10 +41,6 @@ public class JarBlockEntity extends BlockEntity implements ImplementedInventory 
         NbtList nbtList = new NbtList();
         {
             ItemStack itemStack = stacks.get(0);
-            //if (itemStack.isEmpty()) {
-            //    System.out.println("it's empty");
-            //    continue;
-            //}
             NbtCompound nbtCompound = new NbtCompound();
             nbtCompound.putByte("Slot", (byte)0);
             itemStack.writeNbt(nbtCompound);
@@ -56,7 +50,6 @@ public class JarBlockEntity extends BlockEntity implements ImplementedInventory 
             nbt.put("Items", nbtList);
         }
 
-        //super.writeNbt(nbt);
     }
 
     @Nullable

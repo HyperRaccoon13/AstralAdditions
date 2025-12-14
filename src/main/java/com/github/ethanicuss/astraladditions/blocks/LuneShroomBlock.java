@@ -78,7 +78,6 @@ public class LuneShroomBlock extends Block {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        //entity.damage(DamageSource.CACTUS, 2.0f);
     }
 
     @Override

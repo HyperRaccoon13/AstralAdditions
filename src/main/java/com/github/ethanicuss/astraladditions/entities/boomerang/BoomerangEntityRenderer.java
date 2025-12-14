@@ -37,20 +37,6 @@ public class BoomerangEntityRenderer
 
     @Override
     public void render(BoomerangEntity entity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-        /*matrixStack.push();
-        matrixStack.scale(1.0f, 1.0f, 1.0f);
-        matrixStack.multiply(this.dispatcher.getRotation());
-        matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180.0f));
-        MatrixStack.Entry entry = matrixStack.peek();
-        Matrix4f matrix4f = entry.getPositionMatrix();
-        Matrix3f matrix3f = entry.getNormalMatrix();
-        VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(RenderLayer.getEntityCutoutNoCull(TEXTURE));
-        produceVertex(vertexConsumer, matrix4f, matrix3f, i, 0.0f, 0, 0, 1);
-        produceVertex(vertexConsumer, matrix4f, matrix3f, i, 1.0f, 0, 1, 1);
-        produceVertex(vertexConsumer, matrix4f, matrix3f, i, 1.0f, 1, 1, 0);
-        produceVertex(vertexConsumer, matrix4f, matrix3f, i, 0.0f, 1, 0, 0);
-        matrixStack.pop();
-        super.render(dragonFireballEntity, f, g, matrixStack, vertexConsumerProvider, i);*/
         ItemStack itemStack = entity.getRangItem();
         if (itemStack != ItemStack.EMPTY || itemStack.isOf(Items.AIR)) {
             matrixStack.push();
