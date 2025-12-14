@@ -1,8 +1,6 @@
 package com.github.ethanicuss.astraladditions.playertracker;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.integrated.IntegratedServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 

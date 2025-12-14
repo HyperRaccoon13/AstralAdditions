@@ -1,5 +1,6 @@
 package com.github.ethanicuss.astraladditions.fluids;
 
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;

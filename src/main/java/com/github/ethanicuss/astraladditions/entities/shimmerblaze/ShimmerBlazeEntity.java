@@ -1,6 +1,6 @@
 package com.github.ethanicuss.astraladditions.entities.shimmerblaze;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.util.ModUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -20,15 +20,11 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 
 import java.util.EnumSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Stream;
 
 public class ShimmerBlazeEntity extends BlazeEntity {
     public ShimmerBlazeEntity(EntityType<? extends BlazeEntity> entityType, World world) {
@@ -37,7 +33,11 @@ public class ShimmerBlazeEntity extends BlazeEntity {
     }
 
     public static DefaultAttributeContainer.Builder createShimmerBlazeAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4f).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0).add(EntityAttributes.GENERIC_MAX_HEALTH, 180.0);
+        return HostileEntity.createHostileAttributes()
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4f)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 180.0);
     }
 
     @Override

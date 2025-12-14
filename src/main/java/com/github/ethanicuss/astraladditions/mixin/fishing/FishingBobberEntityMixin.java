@@ -1,7 +1,7 @@
 package com.github.ethanicuss.astraladditions.mixin.fishing;
 
 import com.github.ethanicuss.astraladditions.entities.shimmerfishingrod.ShimmerFishingBobberEntity;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;

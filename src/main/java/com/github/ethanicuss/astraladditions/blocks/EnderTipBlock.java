@@ -1,7 +1,6 @@
 package com.github.ethanicuss.astraladditions.blocks;
 
 import com.github.ethanicuss.astraladditions.registry.ModBlocks;
-import com.github.ethanicuss.astraladditions.registry.ModData;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

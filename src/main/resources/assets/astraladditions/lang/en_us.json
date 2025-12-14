@@ -40,13 +40,16 @@
 	"item.astraladditions.disc_purple_prison.desc": "Purple Prison - ethanicuss",
 	"item.astraladditions.disc_astral_lakes_remix": "Astral Lakes (ethanicuss' meow moew :wolfGif: remix) Music Disc",
 	"item.astraladditions.disc_astral_lakes_remix.desc": "Astral Lakes (ethanicuss' meow moew :wolfGif: remix) - ethanicuss",
+	"item.astraladditions.rapier": "Rapier",
+	"item.astraladditions.parry_shield": "Round Shield",
+	"item.astraladditions.cogfly": "Cogfly",
 
 	"item.astraladditions.shimmer_fishing_rod": "Shimmer Fishing Rod",
 	"item.astraladditions.shimmering_thread": "Shimmering Thread",
 	"item.astraladditions.shimmer_trout": "Shimmer Trout",
 	"item.astraladditions.shimmer_shish": "Shish",
 	"item.astraladditions.bottomless_water_bucket": "Bottomless Water Bucket",
-  
+
 	"block.astraladditions.enderrack": "Enderrack",
 	"block.astraladditions.twisted_nylium": "Twisted Nylium",
 	"block.astraladditions.ender_sprouts": "Ender Sprouts",
@@ -85,6 +88,7 @@
 	"entity.astraladditions.shimmer_blaze": "Shimmer Blaze",
 	"entity.astraladditions.ender_watcher": "Ender Watcher",
 	"entity.astraladditions.moonman": "Moonman",
+	"entity.astraladditions.blackhole": "Blackhole",
 
 	"category.astraladditions.desizer" : "Desizer",
 
@@ -109,5 +113,20 @@
 	"category.astraladditions.shattering": "Shattering",
 	"category.astraladditions.shattering.workstations": "Any tool with this enchantment",
 
-	"effect.astraladditions.sink": "Sinking"
+	"effect.astraladditions.sink": "Sinking",
+	"effect.astraladditions.parry": "Parry",
+	"effect.astraladditions.frost": "Frost",
+
+	"item.minecraft.potion.effect.shimmer": "Bottle of Shimmer",
+	"item.minecraft.splash_potion.effect.shimmer": "Splash Bottle of Shimmer",
+	"item.minecraft.lingering_potion.effect.shimmer": "Lingering Bottle of Shimmer",
+	"item.minecraft.tipped_arrow.effect.shimmer": "Arrow of Shimmer",
+
+	"item.minecraft.potion.effect.sputum": "Bottle of Sputum",
+	"item.minecraft.splash_potion.effect.sputum": "Splash Bottle of Sputum",
+	"item.minecraft.lingering_potion.effect.sputum": "Lingering Bottle of Sputum",
+	"item.minecraft.tipped_arrow.effect.sputum": "Arrow of Sputum",
+
+	"tooltip.astraladditions.cogfly": "W.I.P for 2.2"
+
 }

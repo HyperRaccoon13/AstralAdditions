@@ -1,6 +1,6 @@
 package com.github.ethanicuss.astraladditions.mixin.betterdragon;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.moondragon.EnderBallEntity;
 import com.github.ethanicuss.astraladditions.entities.moondragon.GluttonyBallEntity;
 import com.github.ethanicuss.astraladditions.entities.voidtouchedzombie.VoidtouchedZombieEntity;
@@ -295,4 +295,3 @@ class BetterChargingPlayerPhase {
         }
     }
 }
-

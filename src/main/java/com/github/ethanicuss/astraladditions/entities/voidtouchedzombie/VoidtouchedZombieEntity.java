@@ -13,7 +13,6 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ServerWorldAccess;
@@ -32,7 +31,11 @@ public class VoidtouchedZombieEntity
     }
 
     public static DefaultAttributeContainer.Builder createVoidtouchedZombieAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 30.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.28f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0).add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS, 0.0f);
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 30.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.28f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0)
+                .add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS, 0.0f);
     }
 
     @Override

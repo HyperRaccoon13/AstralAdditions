@@ -1,18 +1,13 @@
 package com.github.ethanicuss.astraladditions.entities.ender_watcher;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.moondragon.GluttonyBallEntity;
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeEntity;
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeRainEntity;
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.SmallShimmerballEntity;
 import com.github.ethanicuss.astraladditions.util.ModUtils;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
@@ -27,12 +22,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 
 import java.util.EnumSet;
-import java.util.List;
 
 public class EnderWatcherEntity extends BlazeEntity {
 
@@ -42,7 +35,11 @@ public class EnderWatcherEntity extends BlazeEntity {
     }
 
     public static DefaultAttributeContainer.Builder createWatcherAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 120).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.12f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 16.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
+        return HostileEntity.createHostileAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 120)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.12f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 16.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
     }
 
     @Override
@@ -160,12 +157,6 @@ public class EnderWatcherEntity extends BlazeEntity {
                             for (int i = 0; i < 1; ++i) {
                                 ModUtils.playSound((ServerWorld)this.blaze.world, this.blaze.getX(), this.blaze.getY(), this.blaze.getZ(), SoundEvents.ENTITY_SHULKER_OPEN, SoundCategory.HOSTILE, 1.0f, 1.1f + this.blaze.world.random.nextFloat() * 0.2f, true);
                                 this.blaze.playSound(SoundEvents.ENTITY_SHULKER_OPEN, 0.5f, 1.1f + this.blaze.world.random.nextFloat() * 0.2f);
-                                /*SmallShimmerballEntity smallShimmerballEntity = new SmallShimmerballEntity(ModEntities.SMALL_SHIMMERBALL, this.blaze.world);
-                                smallShimmerballEntity.setPosition(this.blaze.getX(), this.blaze.getBodyY(0.5) + 0.5, this.blaze.getZ());
-                                smallShimmerballEntity.refreshPositionAndAngles(this.blaze.getX(), this.blaze.getBodyY(0.5) + 0.5, this.blaze.getZ(), 0.0f, 0.0f);
-                                double speed = 0.05;
-                                smallShimmerballEntity.setVelocity(e * speed + this.blaze.getRandom().nextGaussian() * h, f * speed + this.blaze.getRandom().nextGaussian() * h, g * speed + this.blaze.getRandom().nextGaussian() * h);
-                                this.blaze.world.spawnEntity(smallShimmerballEntity);*/
                                 ItemStack arrow = new ItemStack(Items.SPECTRAL_ARROW);
                                 PersistentProjectileEntity persistentProjectileEntity = ProjectileUtil.createArrowProjectile(this.blaze, arrow, 3.0f);
                                 double dArrow = livingEntity.getX() - this.blaze.getX();
@@ -191,15 +182,9 @@ public class EnderWatcherEntity extends BlazeEntity {
                                 pPos = pPos.down();
                                 stopper++;
                             }
-                            /*ShimmerBlazeRainEntity shimmerRain = new ShimmerBlazeRainEntity(ModEntities.SHIMMER_RAIN, this.blaze.world);
-                            shimmerRain.setPosition(pPos.getX(), pPos.getY() - 0.5, pPos.getZ());
-                            shimmerRain.refreshPositionAndAngles(pPos.getX(), pPos.getY() - 0.5, pPos.getZ(), 0.0f, 0.0f);
-                            this.blaze.world.spawnEntity(shimmerRain);*/
                             GluttonyBallEntity gluttonyBallEntity = new GluttonyBallEntity(ModEntities.GLUTTONY_BALL, this.blaze.world);
                             gluttonyBallEntity.setPos(pPos.getX(), pPos.getY() - 0.5, pPos.getZ());
                             gluttonyBallEntity.refreshPositionAndAngles(pPos.getX(), pPos.getY() - 0.5, pPos.getZ(), 0.0f, 0.0f);
-                            //double speed = 0.1;
-                            //e.setVelocity((p.getX() - e.getX()) * speed - 0.1 + i * 0.1, (p.getY() - e.getY()) * speed - 0.2 + i * 0.2, (p.getZ() - e.getZ()) * speed - 0.1 + i * 0.1);
                             this.blaze.world.spawnEntity(gluttonyBallEntity);
                         }
                         if (this.fireballCooldown == 0){

@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "astraladditions:item/rapier"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "astraladditions.dash_type": 1
+      },
+      "model": "astraladditions:item/rapier_heavy"
+    }
+  ]
+}

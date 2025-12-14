@@ -1,9 +1,8 @@
 package com.github.ethanicuss.astraladditions;
 
-import com.github.ethanicuss.astraladditions.compat.create.ModFanProcessingType;
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
-import com.github.ethanicuss.astraladditions.particle.ModParticles;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModParticles;
 import com.github.ethanicuss.astraladditions.playertracker.WorldRegister;
 import com.github.ethanicuss.astraladditions.registry.*;
 import net.fabricmc.api.ModInitializer;
@@ -19,19 +18,16 @@ public class AstralAdditions implements ModInitializer {
 	public void onInitialize() {
 
 		ModFluids.registerFluids();
-		ModEntities.init();
+		ModEntities.registerEntities();
 		ModBlocks.registerBlocks();
+		ModBlocks.registerBlockItems();
 		ModItems.registerItems();
 		ModSounds.registerSounds();
-		//DesizerRecipes.init();
 		ModRecipes.registerRecipes();
-		ModEntitySpawn.addEntitySpawn();
-
+		ModEntitySpawns.registerEntitySpawn();
 		ModEffects.registerEffects();
 		ModParticles.registerParticles();
-
-		ModFanProcessingType.register();
-
+		ModPotion.registerPotions();
 		LOGGER.info("Astral Additions is active!");
 	}
 }
