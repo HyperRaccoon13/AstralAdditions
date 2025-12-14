@@ -1,5 +1,6 @@
 package com.github.ethanicuss.astraladditions.fluids;
 
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
@@ -7,7 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 
-public abstract class ShimmerFluid extends ModFluid {
+public abstract class ShimmerFluid extends ModFlowableFluid {
     @Override
     public Fluid getStill() {
         return ModFluids.STILL_SHIMMER;

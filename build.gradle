@@ -61,7 +61,7 @@ dependencies {
 	modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
 
 	modCompileOnly "maven.modrinth:yttr:${yttr_version}"
-	modLocalRuntime "maven.modrinth:yttr:${yttr_version}"
+	//modLocalRuntime "maven.modrinth:yttr:${yttr_version}"
 
 	modImplementation("com.simibubi.create:create-fabric-1.18.2:${create_version}")
 

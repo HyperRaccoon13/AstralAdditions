@@ -16,13 +16,11 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
-import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.explosion.Explosion;
 
 import java.util.EnumSet;
@@ -54,7 +52,8 @@ public class PhastEntity extends GhastEntity {
     }
 
     public static DefaultAttributeContainer.Builder createPhastAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0);
+        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0);
     }
 
     @Override

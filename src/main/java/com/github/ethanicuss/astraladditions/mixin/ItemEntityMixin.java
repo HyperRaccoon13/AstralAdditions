@@ -1,8 +1,8 @@
 package com.github.ethanicuss.astraladditions.mixin;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeEntity;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import com.github.ethanicuss.astraladditions.recipes.TransmuteRecipe;
 import com.github.ethanicuss.astraladditions.registry.ModData;
 import com.github.ethanicuss.astraladditions.registry.ModItems;

@@ -1,18 +1,12 @@
 package com.github.ethanicuss.astraladditions.entities.shimmerblaze;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
-import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntityModelLayer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.render.entity.BlazeEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.client.render.entity.model.BlazeEntityModel;
-import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.mob.BlazeEntity;
-import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 
@@ -22,7 +16,7 @@ public class ShimmerBlazeEntityRenderer
     private static final Identifier TEXTURE = new Identifier(AstralAdditions.MOD_ID, "textures/entity/shimmer_blaze/shimmer_blaze.png");
 
     public ShimmerBlazeEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new ShimmerBlazeEntityModel(context.getPart(AstralAdditionsClient.MODEL_SHIMMER_BLAZE_LAYER)), 0.5f);
+        super(context, new ShimmerBlazeEntityModel(context.getPart(ModEntityModelLayer.MODEL_SHIMMER_BLAZE_LAYER)), 0.5f);
     }
 
     @Override

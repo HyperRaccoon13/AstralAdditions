@@ -18,10 +18,10 @@ import com.github.ethanicuss.astraladditions.compat.rei.yttr.soaking.SoakingCate
 import com.github.ethanicuss.astraladditions.compat.rei.yttr.soaking.SoakingDisplay;
 import com.github.ethanicuss.astraladditions.compat.rei.yttr.voidfiltering.VoidFilteringCategory;
 import com.github.ethanicuss.astraladditions.compat.rei.yttr.voidfiltering.VoidFilteringDisplay;
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
 import com.github.ethanicuss.astraladditions.recipes.DesizerRecipe;
 import com.github.ethanicuss.astraladditions.recipes.TransmuteRecipe;
-import com.github.ethanicuss.astraladditions.registry.ChromaticVacuumRecipe;
+import com.github.ethanicuss.astraladditions.recipes.ChromaticVacuumRecipe;
 import com.github.ethanicuss.astraladditions.registry.ModBlocks;
 import com.github.ethanicuss.astraladditions.registry.ModItems;
 import com.unascribed.yttr.init.YEnchantments;
@@ -115,8 +115,7 @@ public class AstralAdditionsREIClientPlugin implements REIClientPlugin {
 		List<TransmuteDisplay> transmuteRecipes = recipeManager.listAllOfType(TransmuteRecipe.Type.INSTANCE).stream().map(TransmuteDisplay::of).toList();
 		transmuteRecipes.forEach(registry::add);
 
-		List<VacuumDisplay> vacuumRecipes = recipeManager.listAllOfType(ChromaticVacuumRecipe.Type.INSTANCE).stream().map(VacuumDisplay::of).toList();
-		vacuumRecipes.forEach(registry::add);
+		registry.registerFiller(ChromaticVacuumRecipe.class, VacuumDisplay::of);
 
 		//* YTTR
 		List<CentrifugeDisplay> centrifugeRecipes = recipeManager.listAllOfType(YRecipeTypes.CENTRIFUGING).stream().map(CentrifugeDisplay::of).toList();

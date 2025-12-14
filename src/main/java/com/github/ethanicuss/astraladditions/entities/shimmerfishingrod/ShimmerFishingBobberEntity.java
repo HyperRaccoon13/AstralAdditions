@@ -1,6 +1,6 @@
 package com.github.ethanicuss.astraladditions.entities.shimmerfishingrod;
 
-import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.registry.ModEntities;
 import com.github.ethanicuss.astraladditions.mixin.fishing.FishingBobberEntityAccessor;
 import com.github.ethanicuss.astraladditions.registry.ModItems;
 import com.github.ethanicuss.astraladditions.util.FishingBobberStateHelper;

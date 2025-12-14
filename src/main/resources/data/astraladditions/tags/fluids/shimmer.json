@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "kubejs:shimmer",
+    "kubejs:flowing_shimmer"
+  ]
+}

@@ -1,6 +1,5 @@
 package com.github.ethanicuss.astraladditions.entities.prismatic_geyser;
 
-import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeEntity;
 import com.github.ethanicuss.astraladditions.registry.ModEffects;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

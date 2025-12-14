@@ -6,10 +6,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtHelper;
-import net.minecraft.util.annotation.Debug;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class GlazerEntity extends BeeEntity {
@@ -49,6 +45,11 @@ public class GlazerEntity extends BeeEntity {
     }
 
     public static DefaultAttributeContainer.Builder createGlazerAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 18.0).add(EntityAttributes.GENERIC_FLYING_SPEED, 0.8f).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.8f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
+        return MobEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 18.0)
+                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.8f)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.8f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0);
     }
 }
