@@ -22,18 +22,16 @@ import net.minecraft.util.registry.Registry;
 
 public class ModFluids {
     public static final String ASTRAL_ID = "kubejs";
+
     public static FlowableFluid STILL_SHIMMER;
     public static FlowableFluid FLOWING_SHIMMER;
     public static Item SHIMMER_BUCKET;
     public static Block SHIMMER;
 
-    public static final TagKey<Fluid> SHIMMER_TAG = register("sputum");
     public static FlowableFluid STILL_SPUTUM;
     public static FlowableFluid FLOWING_SPUTUM;
     public static Item SPUTUM_BUCKET;
     public static Block SPUTUM;
-
-    public static final TagKey<Fluid> SPUTUM_TAG = register("sputum");
 
     public static void registerFluids(){
         STILL_SHIMMER = Registry.register(Registry.FLUID, new Identifier(ASTRAL_ID, "shimmer"), new ShimmerFluid.Still());
@@ -54,8 +52,8 @@ public class ModFluids {
 
 
     public static void registerFluidRenderersClient() {
-        registerHandler(ModFluids.STILL_SHIMMER, ModFluids.FLOWING_SHIMMER, new Identifier(AstralAdditions.MOD_ID, "block/shimmer"), 0xffd6fa);
-        registerHandler(ModFluids.STILL_SPUTUM, ModFluids.FLOWING_SPUTUM, new Identifier(AstralAdditions.MOD_ID, "block/sputum/sputum"), 0xffffff);
+        registerHandler(ModFluids.STILL_SHIMMER, ModFluids.FLOWING_SHIMMER, new Identifier(AstralAdditions.MOD_ID, "block/shimmer/shimmer"), 0xffd6fa);
+        registerHandler(ModFluids.STILL_SPUTUM, ModFluids.FLOWING_SPUTUM, new Identifier(AstralAdditions.MOD_ID, "block/sputum/sputum"), 0x4c0e5e);
 
 
         final Fluid[] TRANSLUCENT_FLUIDS = {
@@ -74,9 +72,5 @@ public class ModFluids {
     }
     private static void registerHandler(Fluid still, Fluid flowing, Identifier id, int tint) {
         FluidRenderHandlerRegistry.INSTANCE.register(still, flowing, new SimpleFluidRenderHandler(id, id, tint));
-    }
-
-    private static TagKey<Fluid> register(String id) {
-        return TagKey.of(Registry.FLUID_KEY, new Identifier(id));
     }
 }

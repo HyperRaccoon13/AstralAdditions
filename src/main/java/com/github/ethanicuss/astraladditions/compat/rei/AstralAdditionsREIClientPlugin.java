@@ -115,8 +115,7 @@ public class AstralAdditionsREIClientPlugin implements REIClientPlugin {
 		List<TransmuteDisplay> transmuteRecipes = recipeManager.listAllOfType(TransmuteRecipe.Type.INSTANCE).stream().map(TransmuteDisplay::of).toList();
 		transmuteRecipes.forEach(registry::add);
 
-		List<VacuumDisplay> vacuumRecipes = recipeManager.listAllOfType(ChromaticVacuumRecipe.Type.INSTANCE).stream().map(VacuumDisplay::of).toList();
-		vacuumRecipes.forEach(registry::add);
+		registry.registerFiller(ChromaticVacuumRecipe.class, VacuumDisplay::of);
 
 		//* YTTR
 		List<CentrifugeDisplay> centrifugeRecipes = recipeManager.listAllOfType(YRecipeTypes.CENTRIFUGING).stream().map(CentrifugeDisplay::of).toList();

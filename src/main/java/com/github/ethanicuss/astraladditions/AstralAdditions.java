@@ -27,7 +27,7 @@ public class AstralAdditions implements ModInitializer {
 		ModEntitySpawns.registerEntitySpawn();
 		ModEffects.registerEffects();
 		ModParticles.registerParticles();
-
+		ModPotion.registerPotions();
 		LOGGER.info("Astral Additions is active!");
 	}
 }

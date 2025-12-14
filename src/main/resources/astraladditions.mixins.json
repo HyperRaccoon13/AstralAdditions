@@ -7,7 +7,6 @@
     "EntityAccessor",
     "ShimmerEffectMixin",
     "ItemEntityMixin",
-    "ParticleRecolourMixin",
 
     "betterdragon.AbstractPhaseAccessor",
     "betterdragon.DragonAccessor",
@@ -29,7 +28,9 @@
   ],
 
   "client": [
-    "SpaceMusicMixin"
+    "SpaceMusicMixin",
+    "ParticleRecolourMixin",
+    "InGameHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

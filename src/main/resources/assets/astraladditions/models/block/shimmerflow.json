@@ -1,6 +1,5 @@
 {
     "textures": {
-        "particle": "astraladditions:block/shimmerflow"
+        "particle": "astraladditions:block/shimmer/shimmerflow"
     }
 }
-
