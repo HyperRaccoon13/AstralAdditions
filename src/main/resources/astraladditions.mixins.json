@@ -4,7 +4,11 @@
   "package": "com.github.ethanicuss.astraladditions.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ParryEffectMixin",
     "EntityAccessor",
+    "ItemEntityMixin",
+    "NerfedShulkers",
+    "ParticleRecolourMixin",
     "ShimmerEffect",
     "betterdragon.AbstractPhaseAccessor",
     "betterdragon.BetterAbstractSittingPhase",
@@ -18,15 +22,10 @@
     "betterdragon.HoverPhaseAccessor",
     "betterdragon.LandingPhaseAccessor",
     "betterdragon.SittingFlamingPhaseAccessor",
-    "ItemEntityMixin",
-    "ParticleRecolourMixin",
+    "fishing.BottomlessBucketItemMixin",
     "fishing.FishingBobberEntityAccessor",
-    "fishing.FishingBobberEntityMixin",
-    "fishing.BottomlessBucketItemMixin"
-
+    "fishing.FishingBobberEntityMixin"
   ],
-
-
   "client": [
     "SpaceMusic"
   ],

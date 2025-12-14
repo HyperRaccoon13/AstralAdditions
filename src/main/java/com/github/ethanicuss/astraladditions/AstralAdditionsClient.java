@@ -1,6 +1,7 @@
 package com.github.ethanicuss.astraladditions;
 
 import com.github.ethanicuss.astraladditions.entities.ModEntities;
+import com.github.ethanicuss.astraladditions.entities.blackhole.BlackholeEntityRenderer;
 import com.github.ethanicuss.astraladditions.fluids.ModFluids;
 import com.github.ethanicuss.astraladditions.particle.ModParticlesClient;
 import com.github.ethanicuss.astraladditions.playertracker.PlayerTracker;
@@ -26,6 +27,7 @@ public class AstralAdditionsClient implements ClientModInitializer {
     public static final EntityModelLayer MODEL_WHAST_LAYER = new EntityModelLayer(new Identifier(AstralAdditions.MOD_ID, "whast"), "main");
     public static final EntityModelLayer MODEL_GLAZER_LAYER = new EntityModelLayer(new Identifier(AstralAdditions.MOD_ID, "glazer"), "main");
     public static final EntityModelLayer MODEL_ENDER_WATCHER_LAYER = new EntityModelLayer(new Identifier(AstralAdditions.MOD_ID, "ender_watcher"), "main");
+    public static final EntityModelLayer MODEL_COGFLY_LAYER = new EntityModelLayer(new Identifier(AstralAdditions.MOD_ID, "cogfly"), "main");
     @Override
     public void onInitializeClient() {
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_SHIMMER, ModFluids.FLOWING_SHIMMER, new SimpleFluidRenderHandler(
