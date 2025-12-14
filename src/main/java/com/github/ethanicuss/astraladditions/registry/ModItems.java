@@ -74,6 +74,9 @@ public class ModItems {
     public static final Item SOULSTEAL_DAGGER = new SoulstealDaggerItem(new FabricItemSettings().group(ItemGroup.COMBAT).maxCount(1).rarity(Rarity.RARE).maxDamage(768));
     public static final Item DIAMOND_BOOMER = new BoomerangItem(new FabricItemSettings().group(ItemGroup.COMBAT).maxCount(1).rarity(Rarity.RARE), 6.0f, 12, 1.2f, 0.0f);
     public static final Item SHIMMERANG = new BoomerangItem(new FabricItemSettings().group(ItemGroup.COMBAT).maxCount(1).rarity(Rarity.RARE), 8.0f, 8, 2.0f, 5.0f);
+    public static final Item RAPIER = new RapierItem(new FabricItemSettings().group(ItemGroup.COMBAT).maxCount(1).rarity(Rarity.RARE));
+    public static final Item SHIELD = new ParryShieldItem(new FabricItemSettings().group(ItemGroup.COMBAT).maxCount(1).rarity(Rarity.UNCOMMON));
+    public static final Item COGFLY = new CogflySpawnItem(new FabricItemSettings().group(ItemGroup.COMBAT).maxCount(4).rarity(Rarity.RARE));
     public static void registerItems() {
         Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "cometball"), COMETBALL);
         Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "pylon"), PYLON);
@@ -107,6 +110,9 @@ public class ModItems {
         Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "soulsteal_dagger"), SOULSTEAL_DAGGER);
         Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "diamond_boomer"), DIAMOND_BOOMER);
         Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "shimmerang"), SHIMMERANG);
+        Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "rapier"), RAPIER);
+        Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "parry_shield"), SHIELD);
+        Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "cogfly"), COGFLY);
         addSacrificeItem(AWAKENED_SHIMMER_HEART, ModEntities.SHIMMER_BLAZE);
 
         Registry.register(Registry.ITEM, new Identifier(AstralAdditions.MOD_ID, "shimmer_fishing_rod"), SHIMMER_FISHING_ROD);

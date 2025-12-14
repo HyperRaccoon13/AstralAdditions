@@ -27,5 +27,7 @@ public class ModEntitySpawns {
                 Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, FlyingEntity::canMobSpawn);
         SpawnRestrictionAccessor.callRegister(ModEntities.WHAST, SpawnRestriction.Location.ON_GROUND,
                 Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, FlyingEntity::canMobSpawn);
+        SpawnRestrictionAccessor.callRegister(ModEntities.BLACKHOLE, SpawnRestriction.Location.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnIgnoreLightLevel);
     }
 }

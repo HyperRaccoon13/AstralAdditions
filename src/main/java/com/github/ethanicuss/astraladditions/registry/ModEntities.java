@@ -1,8 +1,14 @@
 package com.github.ethanicuss.astraladditions.registry;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
+import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
+import com.github.ethanicuss.astraladditions.entities.blackhole.BlackholeEntity;
+import com.github.ethanicuss.astraladditions.entities.blackhole.BlackholeEntityRenderer;
 import com.github.ethanicuss.astraladditions.entities.boomerang.BoomerangEntity;
 import com.github.ethanicuss.astraladditions.entities.boomerang.BoomerangEntityRenderer;
+import com.github.ethanicuss.astraladditions.entities.cogfly.CogflyEntity;
+import com.github.ethanicuss.astraladditions.entities.cogfly.CogflyEntityModel;
+import com.github.ethanicuss.astraladditions.entities.cogfly.CogflyEntityRenderer;
 import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntity;
 import com.github.ethanicuss.astraladditions.entities.cometball.CometballEntityRenderer;
 import com.github.ethanicuss.astraladditions.entities.ender_watcher.EnderWatcherEntity;
@@ -146,6 +152,16 @@ public class ModEntities {
             new Identifier(AstralAdditions.MOD_ID, "boomerang"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, BoomerangEntity::new).dimensions(EntityDimensions.fixed(2.0f, 1.5f)).build()
     );
+    public static final EntityType<BlackholeEntity> BLACKHOLE = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(AstralAdditions.MOD_ID, "blackhole"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, BlackholeEntity::new).dimensions(EntityDimensions.fixed(1f, 1.6f)).build()
+    );
+    public static final EntityType<CogflyEntity> COGFLY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(AstralAdditions.MOD_ID, "cogfly"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC, CogflyEntity::new).dimensions(EntityDimensions.fixed(0.3f, 0.3f)).build()
+    );
 
     public static final EntityType<ShimmerFishingBobberEntity> SHIMMER_FISHING_BOBBER = Registry.register(
             Registry.ENTITY_TYPE,
@@ -167,6 +183,7 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(WHAST, WhastEntity.createWhastAttributes());
         FabricDefaultAttributeRegistry.register(ENDER_WATCHER, EnderWatcherEntity.createWatcherAttributes());
         FabricDefaultAttributeRegistry.register(GLAZER, GlazerEntity.createGlazerAttributes());
+        FabricDefaultAttributeRegistry.register(BLACKHOLE, BlackholeEntity.createBlackholeAttributes());
 
     }
 
@@ -219,5 +236,10 @@ public class ModEntities {
         EntityRendererRegistry.register(SHIMMER_FISHING_BOBBER, ShimmerFishingBobberRenderer::new);
 
         EntityRendererRegistry.register(BOOMERANG, BoomerangEntityRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.BLACKHOLE, BlackholeEntityRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.COGFLY, CogflyEntityRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayer.MODEL_COGFLY_LAYER, CogflyEntityModel::getTexturedModelData);
     }
 }
