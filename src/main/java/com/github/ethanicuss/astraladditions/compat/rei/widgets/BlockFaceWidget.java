@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 public class BlockFaceWidget extends WidgetWithBounds {
 	private final Supplier<Block> blockSupplier;
 	private final Point position;
-	private final Direction side; //kinda forgot about this part
+	private final Direction side;
 	private final int rotationDegrees;
 	private final boolean showTooltip;
 

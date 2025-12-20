@@ -2,6 +2,7 @@ package com.github.ethanicuss.astraladditions.registry;
 
 import com.github.ethanicuss.astraladditions.AstralAdditions;
 import com.github.ethanicuss.astraladditions.particle.shimmer.ShimmerBubbleParticle;
+import com.github.ethanicuss.astraladditions.particle.shimmer.ShimmerBubblePopParticle;
 import com.github.ethanicuss.astraladditions.particle.shimmer.ShimmerSplashParticle;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
@@ -24,5 +25,6 @@ public class ModParticles {
 	public static void registerClient() {
 		ParticleFactoryRegistry.getInstance().register(ModParticles.SHIMMER_BUBBLE, ShimmerBubbleParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.SHIMMER_SPLASH, ShimmerSplashParticle.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.SHIMMER_BUBBLE_POP, ShimmerBubblePopParticle.Factory::new);
 	}
 }

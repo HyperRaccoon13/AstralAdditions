@@ -6,8 +6,8 @@ import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.util.Identifier;
 
 import java.util.Arrays;
@@ -27,21 +27,21 @@ public class CentrifugeDisplay extends BasicDisplay {
         return AstralAdditionsREIClientPlugin.CENTRIFUGE;
     }
 
-    public static CentrifugeDisplay of(Recipe<?> recipe) {
-        CentrifugingRecipe centrifugingRecipe = (CentrifugingRecipe) recipe;
-
-        Ingredient ingredient = centrifugingRecipe.getInput();
+    public static CentrifugeDisplay of(CentrifugingRecipe recipe) {
+        Ingredient ingredient = recipe.getInput();
+        int count = recipe.getInputCount();
 
         List<EntryIngredient> inputs = Collections.singletonList(
                 EntryIngredient.of(
-                        Arrays.stream(ingredient.getMatchingStacks())
-                                .map(EntryStacks::of)
-                                .toList()
+                        Arrays.stream(ingredient.getMatchingStacks()).map(stack -> {
+                            ItemStack copy = stack.copy();
+                            copy.setCount(count);
+                            return EntryStacks.of(copy);}).toList()
                 )
         );
 
-        List<EntryIngredient> outputs = centrifugingRecipe.getOutputs().stream()
-                .map(stack -> EntryIngredient.of(EntryStacks.of(stack)))
+        List<EntryIngredient> outputs = recipe.getOutputs().stream()
+                .map(stack -> EntryIngredient.of(EntryStacks.of(stack.copy())))
                 .toList();
 
         return new CentrifugeDisplay(recipe.getId(), inputs, outputs);

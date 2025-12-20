@@ -16,7 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class DesizerRecipe implements Recipe<SimpleInventory> {
-    public static final Logger LOGGER = LoggerFactory.getLogger(AstralAdditions.MOD_ID);
     private final Identifier id;
     private final ItemStack output;
     private final DefaultedList<Ingredient> recipeItems;
@@ -85,12 +84,10 @@ public class DesizerRecipe implements Recipe<SimpleInventory> {
 
         @Override
         public DesizerRecipe read(Identifier id, JsonObject json) {
-            // Parse output
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
-            // Parse ingredients
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(27, Ingredient.EMPTY); // Ensure size matches grid
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(27, Ingredient.EMPTY);
 
             for (int i = 0; i < ingredients.size(); i++) {
                 JsonElement element = ingredients.get(i);

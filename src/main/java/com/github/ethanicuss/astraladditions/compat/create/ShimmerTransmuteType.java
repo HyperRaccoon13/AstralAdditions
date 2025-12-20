@@ -1,16 +1,14 @@
 package com.github.ethanicuss.astraladditions.compat.create;
 
-import com.github.ethanicuss.astraladditions.fluids.ModFluids;
-import com.github.ethanicuss.astraladditions.particle.ModParticles;
+import com.github.ethanicuss.astraladditions.registry.ModFluids;
+import com.github.ethanicuss.astraladditions.registry.ModParticles;
 import com.github.ethanicuss.astraladditions.recipes.TransmuteRecipe;
 import com.jozufozu.flywheel.util.Color;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
-import dev.architectury.platform.Mod;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
