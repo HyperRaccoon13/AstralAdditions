@@ -8,7 +8,6 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.util.Identifier;
 
 import java.util.Collections;
@@ -23,7 +22,7 @@ public class VacuumDisplay extends BasicDisplay {
 						 List<EntryIngredient> inputs,
 						 List<EntryIngredient> outputs,
 						 List<EntryIngredient> remainder) {
-		super(inputs, outputs, Optional.ofNullable(id)); // REI 8.x ctor
+		super(inputs, outputs, Optional.ofNullable(id));
 		this.remainderEntries = (remainder == null) ? Collections.emptyList() : remainder;
 	}
 
@@ -36,23 +35,22 @@ public class VacuumDisplay extends BasicDisplay {
 		return remainderEntries;
 	}
 
-	/** Return null to let REI skip invalid/unsynced recipes. */
-	public static VacuumDisplay of(Recipe<?> recipe) {
-		if (!(recipe instanceof ChromaticVacuumRecipe chromatic)) return null;
-
-		ItemStack ing = chromatic.getIngredient();      // if yours actually returns Ingredient, change type + EntryIngredients.of(ing)
-		if (ing == null || ing.isEmpty()) return null;
+	public static VacuumDisplay of(ChromaticVacuumRecipe chromatic) {
+		Ingredient ing = chromatic.getIngredients().isEmpty() ? Ingredient.EMPTY : chromatic.getIngredients().get(0);
+		if (ing.isEmpty()) return null;
 
 		ItemStack out = chromatic.getOutput();
-		if (out == null || out.isEmpty()) return null;
+		if (out.isEmpty()) return null;
 
-		List<EntryIngredient> inputs    = Collections.singletonList(EntryIngredients.of(ing));
-		List<EntryIngredient> outputs   = Collections.singletonList(EntryIngredients.of(out));
+		List<EntryIngredient> inputs  = Collections.singletonList(EntryIngredients.ofIngredient(ing));
+		List<EntryIngredient> outputs = Collections.singletonList(EntryIngredients.of(out.copy()));
+
+		ItemStack rem = chromatic.getRemainder();
 		List<EntryIngredient> remainders =
-				chromatic.hasRemainder() && chromatic.getRemainder() != null && !chromatic.getRemainder().isEmpty()
-						? Collections.singletonList(EntryIngredients.of(chromatic.getRemainder()))
+				chromatic.hasRemainder() && !rem.isEmpty()
+						? Collections.singletonList(EntryIngredients.of(rem.copy()))
 						: Collections.emptyList();
 
-		return new VacuumDisplay(recipe.getId(), inputs, outputs, remainders);
+		return new VacuumDisplay(chromatic.getId(), inputs, outputs, remainders);
 	}
 }

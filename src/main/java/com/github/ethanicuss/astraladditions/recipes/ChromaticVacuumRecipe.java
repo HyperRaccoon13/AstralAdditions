@@ -17,7 +17,7 @@ public class ChromaticVacuumRecipe implements Recipe<SimpleInventory> {
     private final ItemStack remainder;
     private final DefaultedList<Ingredient> recipeItems;
 
-    public ChromaticVacuumRecipe(Identifier id, ItemStack output, ItemStack remainder, DefaultedList<Ingredient> recipeItems){
+    public ChromaticVacuumRecipe(Identifier id, ItemStack output, ItemStack remainder, DefaultedList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
         this.remainder = remainder;
@@ -63,12 +63,13 @@ public class ChromaticVacuumRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
-    public boolean hasRemainder() {
-        return !remainder.isEmpty();
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        return recipeItems;
     }
 
-    public ItemStack getIngredient() {
-        return recipeItems.get(0).getMatchingStacks()[0];
+    public boolean hasRemainder() {
+        return !remainder.isEmpty();
     }
 
     public static class Type implements RecipeType<ChromaticVacuumRecipe> {
@@ -80,7 +81,6 @@ public class ChromaticVacuumRecipe implements Recipe<SimpleInventory> {
     public static class Serializer implements RecipeSerializer<ChromaticVacuumRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "chromatic_vacuum";
-        // this is the name given in the json file
 
         @Override
         public ChromaticVacuumRecipe read(Identifier id, JsonObject json) {
@@ -89,7 +89,6 @@ public class ChromaticVacuumRecipe implements Recipe<SimpleInventory> {
 
             JsonObject ingredient = JsonHelper.getObject(json, "ingredient");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
-
             inputs.set(0, Ingredient.fromJson(ingredient));
 
             return new ChromaticVacuumRecipe(id, output, remainder, inputs);
@@ -98,13 +97,12 @@ public class ChromaticVacuumRecipe implements Recipe<SimpleInventory> {
         @Override
         public ChromaticVacuumRecipe read(Identifier id, PacketByteBuf buf) {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
-            ItemStack remainder = new ItemStack(Items.DIRT);
-
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromPacket(buf));
             }
 
             ItemStack output = buf.readItemStack();
+            ItemStack remainder = buf.readItemStack();
             return new ChromaticVacuumRecipe(id, output, remainder, inputs);
         }
 
@@ -115,6 +113,7 @@ public class ChromaticVacuumRecipe implements Recipe<SimpleInventory> {
                 ing.write(buf);
             }
             buf.writeItemStack(recipe.getOutput());
+            buf.writeItemStack(recipe.getRemainder());
         }
     }
 }

@@ -6,11 +6,13 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -44,24 +46,32 @@ public class TransmuteRecipe implements Recipe<Inventory> {
     public List<ItemStack> getOutputItems() {
         return outputItems;
     }
+
     public ItemStack getInputItem() {
         return inputItem;
     }
+
     public boolean isIgnoreCount() {
         return ignoreCount;
     }
-    public boolean isSoftIgnoreCount(){
+
+    public boolean isSoftIgnoreCount() {
         return softIgnoreCount;
+    }
+
+    public ItemStack getResult() {
+        return outputItems.isEmpty() ? ItemStack.EMPTY : outputItems.get(0);
     }
 
     @Override
     public boolean matches(Inventory inv, World world) {
-        return false;
+        ItemStack stack = inv.getStack(0);
+        return matches(stack);
     }
 
     @Override
     public ItemStack craft(Inventory inv) {
-        return ItemStack.EMPTY;
+        return getResult().copy();
     }
 
     @Override
@@ -71,11 +81,14 @@ public class TransmuteRecipe implements Recipe<Inventory> {
 
     @Override
     public ItemStack getOutput() {
-        return null;
+        return getResult().copy();
     }
 
-    public ItemStack getResult() {
-        return outputItems.isEmpty() ? ItemStack.EMPTY : outputItems.get(0);
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList<Ingredient> list = DefaultedList.of();
+        list.add(Ingredient.ofStacks(inputItem));
+        return list;
     }
 
     @Override
@@ -94,7 +107,7 @@ public class TransmuteRecipe implements Recipe<Inventory> {
     }
 
     public static class Type implements RecipeType<TransmuteRecipe> {
-        private Type() { }
+        private Type() {}
         public static final Type INSTANCE = new Type();
         public static final String ID = "shimmer_transmute";
     }

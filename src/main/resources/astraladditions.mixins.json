@@ -4,12 +4,15 @@
   "package": "com.github.ethanicuss.astraladditions.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "yttr.YttrEachRegisterableFieldMixin",
+    "yttr.MagtankScreenHandlerMixin",
+
     "ParryEffectMixin",
     "ShimmerEffectMixin",
     "EntityAccessor",
     "ItemEntityMixin",
     "NerfedShulkers",
-    "ParticleRecolourMixin",
+
     "betterdragon.AbstractPhaseAccessor",
     "betterdragon.DragonAccessor",
     "betterdragon.HoverPhaseAccessor",
@@ -32,7 +35,8 @@
   "client": [
     "SpaceMusicMixin",
     "ParticleRecolourMixin",
-    "InGameHudMixin"
+    "InGameHudMixin",
+    "ParticleRecolourMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,10 @@
+{
+  "textures": [
+    "astraladditions:shimmer_bubble_pop_0",
+    "astraladditions:shimmer_bubble_pop_1",
+    "astraladditions:shimmer_bubble_pop_2",
+    "astraladditions:shimmer_bubble_pop_3",
+    "astraladditions:shimmer_bubble_pop_4"
+  ],
+  "type": "minecraft:particle"
+}
