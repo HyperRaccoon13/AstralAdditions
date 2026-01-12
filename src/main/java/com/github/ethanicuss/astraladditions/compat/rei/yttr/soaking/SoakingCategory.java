@@ -24,7 +24,6 @@ public class SoakingCategory implements DisplayCategory<SoakingDisplay> {
     @Override
     public Text getTitle() {
         return new TranslatableText("category.astraladditions.soaking");
-
     }
 
     @Override

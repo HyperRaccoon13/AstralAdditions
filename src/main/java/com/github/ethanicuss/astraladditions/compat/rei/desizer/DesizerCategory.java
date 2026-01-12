@@ -117,7 +117,7 @@ public class DesizerCategory implements DisplayCategory<DesizerDisplay> {
 
     private void updateLayerLabelAndGrid(int newLayer, List<EntryIngredient> inputs, Widget[] layerLabel,
                                          List<Widget> gridWidgets, List<Widget> widgets, int startX, int startY, int buttonY) {
-        
+
         widgets.remove(layerLabel[0]);
         layerLabel[0] = createLayerLabel(startX, buttonY, newLayer);
         widgets.add(layerLabel[0]);

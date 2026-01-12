@@ -1,9 +1,6 @@
 package com.github.ethanicuss.astraladditions.compat.rei.yttr.voidfiltering;
 
 import com.github.ethanicuss.astraladditions.compat.rei.AstralAdditionsREIClientPlugin;
-import com.github.ethanicuss.astraladditions.compat.rei.transmute.TransmuteDisplay;
-import com.github.ethanicuss.astraladditions.compat.rei.vacuum.VacuumDisplay;
-import com.github.ethanicuss.astraladditions.compat.rei.yttr.soaking.SoakingDisplay;
 import com.unascribed.yttr.init.YBlocks;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
@@ -50,9 +47,7 @@ public class VoidFilteringCategory implements DisplayCategory<VoidFilteringDispl
 				.entries(outputs.get(0))
 				.markOutput());
 
-		widgets.add(Widgets.createLabel(new Point(bounds.x + 26, bounds.getMaxY() - 17),
-				new TranslatableText("category.astraladditions.void_filtering.chance", display.getChance()))
-				.leftAligned());
+		widgets.add(Widgets.createLabel(new Point(bounds.x + 26, bounds.getMaxY() - 17), new TranslatableText("category.astraladditions.void_filtering.chance", display.getChance())).leftAligned());
 
 		return widgets;
 	}

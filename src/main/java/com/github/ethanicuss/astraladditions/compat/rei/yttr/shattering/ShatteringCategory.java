@@ -1,9 +1,6 @@
 package com.github.ethanicuss.astraladditions.compat.rei.yttr.shattering;
 
-import com.github.ethanicuss.astraladditions.AstralAdditions;
 import com.github.ethanicuss.astraladditions.compat.rei.AstralAdditionsREIClientPlugin;
-import com.github.ethanicuss.astraladditions.compat.rei.transmute.TransmuteDisplay;
-import com.github.ethanicuss.astraladditions.compat.rei.vacuum.VacuumDisplay;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -31,7 +28,6 @@ import java.util.List;
 
 public class ShatteringCategory implements DisplayCategory<ShatteringDisplay> {
 
-
 	@Override
 	public Text getTitle() {
 		return new TranslatableText("category.astraladditions.shattering");
@@ -58,7 +54,7 @@ public class ShatteringCategory implements DisplayCategory<ShatteringDisplay> {
 		Point startPoint = new Point(bounds.getCenterX() - 40, bounds.getCenterY() - 9);
 		if (display.isExclusive()) {
 			widgets.add(Widgets.createDrawableWidget((helper, matrices, mouseX, mouseY, delta) -> {
-				int v = ConfigObject.getInstance().isUsingDarkTheme() ? 17 : 0;
+				int v = ConfigObject.getInstance().isUsingDarkTheme() ? 18 : 0;
 
 				Identifier texture = Yttr.id("textures/gui/shattering.png");
 

@@ -13,6 +13,7 @@ import me.shedaniel.rei.api.client.gui.widgets.Widgets;
 import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
+import me.shedaniel.rei.api.common.util.EntryIngredients;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -23,7 +24,6 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 
-import java.util.Collections;
 import java.util.List;
 
 public class VacuumCategory implements DisplayCategory<VacuumDisplay> {
@@ -54,9 +54,8 @@ public class VacuumCategory implements DisplayCategory<VacuumDisplay> {
 		int centerX = bounds.getCenterX();
 		int centerY = bounds.getCenterY();
 
-
 		widgets.add(Widgets.createSlot(new Point(centerX - 8, centerY - 43))
-				.entries(Collections.singletonList(EntryStacks.of(ModItems.CHROMATIC_VACUUM))));
+				.entries(EntryIngredients.of(ModItems.CHROMATIC_VACUUM)));
 
 		widgets.add(new RotatedArrowWidget(new Point(centerX - 11, centerY - 20), 90));
 
@@ -64,36 +63,28 @@ public class VacuumCategory implements DisplayCategory<VacuumDisplay> {
 				.entries(inputs.get(0))
 				.markInput());
 
-
 		widgets.add(CurvedArrowWidget.of(new Point(centerX + 11, centerY + 9), 90, false));
 
 		if (!display.getRemainderEntries().isEmpty()) {
 			widgets.add(CurvedArrowWidget.of(new Point(centerX - 27, centerY + 9), -90, true));
 
-			ItemStack outputRemainder = (ItemStack) display.getRemainderEntries().get(0).get(0).getValue();
+			ItemStack outputRemainder = ((ItemStack) display.getRemainderEntries().get(0).get(0).getValue()).copy();
 
-			if (!outputRemainder.hasNbt()) {
-				outputRemainder.setNbt(new NbtCompound());
-			}
 			NbtCompound displayTag = outputRemainder.getOrCreateSubNbt("display");
-
 			NbtList lore = new NbtList();
-			lore.add(NbtString.of(Text.Serializer.toJson(
-					new TranslatableText("category.astraladditions.vacuum.remainder_hint")
-							.setStyle(Style.EMPTY.withItalic(false).withColor(Formatting.YELLOW))
+			lore.add(NbtString.of(Text.Serializer.toJson(new TranslatableText("category.astraladditions.vacuum.remainder_hint")
+					.setStyle(Style.EMPTY.withItalic(false).withColor(Formatting.YELLOW))
 			)));
 			displayTag.put("Lore", lore);
 
 			widgets.add(Widgets.createSlot(new Point(centerX - 28, centerY + 28))
-					.entries(Collections.singletonList(EntryStacks.of(outputRemainder)))
+					.entries(EntryIngredients.of(outputRemainder))
 					.markOutput());
-
-
 		}
+
 		widgets.add(Widgets.createSlot(new Point(centerX + 13, centerY + 28))
 				.entries(outputs.get(0))
 				.markOutput());
-
 
 		return widgets;
 	}

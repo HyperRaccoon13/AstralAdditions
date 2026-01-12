@@ -1,7 +1,7 @@
 package com.github.ethanicuss.astraladditions.compat.rei;
 
-
 import com.github.ethanicuss.astraladditions.AstralAdditions;
+import com.github.ethanicuss.astraladditions.compat.rei.create.BulkShimmeringCategory;
 import com.github.ethanicuss.astraladditions.compat.rei.desizer.DesizerCategory;
 import com.github.ethanicuss.astraladditions.compat.rei.desizer.DesizerDisplay;
 import com.github.ethanicuss.astraladditions.compat.rei.transmute.TransmuteCategory;
@@ -24,6 +24,13 @@ import com.github.ethanicuss.astraladditions.recipes.TransmuteRecipe;
 import com.github.ethanicuss.astraladditions.recipes.ChromaticVacuumRecipe;
 import com.github.ethanicuss.astraladditions.registry.ModBlocks;
 import com.github.ethanicuss.astraladditions.registry.ModItems;
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllItems;
+import com.simibubi.create.compat.rei.DoubleItemIcon;
+import com.simibubi.create.compat.rei.EmptyBackground;
+import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
+import com.simibubi.create.compat.rei.display.CreateDisplay;
+import com.unascribed.yttr.crafting.*;
 import com.unascribed.yttr.init.YEnchantments;
 import com.unascribed.yttr.init.YItems;
 import com.unascribed.yttr.init.YRecipeTypes;
@@ -33,24 +40,27 @@ import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.util.EntryStacks;
-import net.minecraft.client.MinecraftClient;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.nbt.NbtString;
-import net.minecraft.recipe.RecipeManager;
 import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.StonecuttingRecipe;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+@Environment(EnvType.CLIENT)
 public class AstralAdditionsREIClientPlugin implements REIClientPlugin {
 	public static final CategoryIdentifier<DesizerDisplay> DESIZER = CategoryIdentifier.of(new Identifier(AstralAdditions.MOD_ID, "desizer"));
 
@@ -64,6 +74,9 @@ public class AstralAdditionsREIClientPlugin implements REIClientPlugin {
 	public static final CategoryIdentifier<SoakingDisplay> SOAKING = CategoryIdentifier.of(new Identifier(AstralAdditions.MOD_ID, "soaking"));
 	public static final CategoryIdentifier<VoidFilteringDisplay> VOID_FILTERING = CategoryIdentifier.of(new Identifier(AstralAdditions.MOD_ID, "void_filtering"));
 	public static final CategoryIdentifier<ShatteringDisplay> SHATTERING = CategoryIdentifier.of(new Identifier(AstralAdditions.MOD_ID, "shattering"));
+
+	//* Create
+	public static final CategoryIdentifier<CreateDisplay<TransmuteRecipe>> BULK_SHIMMERING = CategoryIdentifier.of(new Identifier(AstralAdditions.MOD_ID, "bulk_shimmering"));
 
 	@Override
 	public void registerCategories(CategoryRegistry registry) {
@@ -103,51 +116,68 @@ public class AstralAdditionsREIClientPlugin implements REIClientPlugin {
 
 		registry.addWorkstations(SHATTERING, EntryStacks.of(shatteringBook));
 
+		CreateRecipeCategory.Info<TransmuteRecipe> shimmerInfo = new CreateRecipeCategory.Info<>(BULK_SHIMMERING, new TranslatableText("category.astraladditions.bulk_shimmering"), new EmptyBackground(178, 110),
+				new DoubleItemIcon(() -> new ItemStack(AllItems.PROPELLER.get()), () -> new ItemStack(ModFluids.SHIMMER_BUCKET)),
+				Collections::emptyList,
+				List.of(() -> new ItemStack(AllItems.PROPELLER.get()), () -> new ItemStack(ModFluids.SHIMMER_BUCKET)),
+				178, 110, recipe -> new CreateDisplay<>(recipe, BULK_SHIMMERING));
+
+		BulkShimmeringCategory bulkShimmeringCategory = new BulkShimmeringCategory(shimmerInfo);
+		registry.add(bulkShimmeringCategory);
+
+		registry.addWorkstations(BULK_SHIMMERING, EntryStacks.of(AllBlocks.ENCASED_FAN.get()));
 	}
 
 	@Override
 	public void registerDisplays(DisplayRegistry registry) {
-		RecipeManager recipeManager = MinecraftClient.getInstance().world.getRecipeManager();
+		registry.registerRecipeFiller(DesizerRecipe.class, DesizerRecipe.Type.INSTANCE, DesizerDisplay::of);
 
-		List<DesizerDisplay> desizerRecipes = recipeManager.listAllOfType(DesizerRecipe.Type.INSTANCE).stream().map(DesizerDisplay::of).toList();
-		desizerRecipes.forEach(registry::add);
+		registry.registerRecipeFiller(TransmuteRecipe.class, TransmuteRecipe.Type.INSTANCE, TransmuteDisplay::of);
 
-		List<TransmuteDisplay> transmuteRecipes = recipeManager.listAllOfType(TransmuteRecipe.Type.INSTANCE).stream().map(TransmuteDisplay::of).toList();
-		transmuteRecipes.forEach(registry::add);
-
-		registry.registerFiller(ChromaticVacuumRecipe.class, VacuumDisplay::of);
+		registry.registerRecipeFiller(ChromaticVacuumRecipe.class, ChromaticVacuumRecipe.Type.INSTANCE, VacuumDisplay::of);
 
 		//* YTTR
-		List<CentrifugeDisplay> centrifugeRecipes = recipeManager.listAllOfType(YRecipeTypes.CENTRIFUGING).stream().map(CentrifugeDisplay::of).toList();
-		centrifugeRecipes.forEach(registry::add);
+		registry.registerRecipeFiller(CentrifugingRecipe.class, YRecipeTypes.CENTRIFUGING, CentrifugeDisplay::of);
 
-		List<PistonSmashingDisplay> pistonSmashingRecipes = recipeManager.listAllOfType(YRecipeTypes.PISTON_SMASHING).stream().map(PistonSmashingDisplay::of).toList();
-		pistonSmashingRecipes.forEach(registry::add);
+		registry.registerRecipeFiller(PistonSmashingRecipe.class, YRecipeTypes.PISTON_SMASHING, PistonSmashingDisplay::of);
 
-		List<SoakingDisplay> soakingRecipes = recipeManager.listAllOfType(YRecipeTypes.SOAKING).stream().map(SoakingDisplay::of).toList();
-		soakingRecipes.forEach(registry::add);
+		registry.registerRecipeFiller(SoakingRecipe.class, YRecipeTypes.SOAKING, SoakingDisplay::of);
 
-		List<VoidFilteringDisplay> voidFilteringRecipe = recipeManager.listAllOfType(YRecipeTypes.VOID_FILTERING).stream().map(VoidFilteringDisplay::of).toList();
-		voidFilteringRecipe.forEach(registry::add);
+		registry.registerRecipeFiller(VoidFilteringRecipe.class, YRecipeTypes.VOID_FILTERING, VoidFilteringDisplay::of);
 
-		//Shattering stuff
-		List<ShatteringDisplay> shatteringRecipes = recipeManager.listAllOfType(YRecipeTypes.SHATTERING).stream()
-				.map(ShatteringDisplay::of)
-				.toList();
-		shatteringRecipes.forEach(registry::add);
+		registry.registerRecipeFiller(ShatteringRecipe.class, YRecipeTypes.SHATTERING, ShatteringDisplay::of);
 
-		List<ShatteringDisplay> shatteringstonecuttingRecipes = recipeManager.listAllOfType(RecipeType.STONECUTTING).stream()
-				.filter(r -> r.getOutput().getCount() == 1 && !r.getIngredients().isEmpty())
-				.map(ShatteringDisplay::of)
-				.toList();
-		shatteringstonecuttingRecipes.forEach(registry::add);
+		registry.registerRecipeFiller(StonecuttingRecipe.class, RecipeType.STONECUTTING, ShatteringDisplay::ofStonecutting);
 
-		List<ShatteringDisplay> shatteringoneByOneCraftingRecipes = recipeManager.listAllOfType(RecipeType.CRAFTING).stream()
-				.filter(r -> r.fits(1, 1) && !r.getIngredients().isEmpty())
-				.map(ShatteringDisplay::of)
-				.toList();
-		shatteringoneByOneCraftingRecipes.forEach(registry::add);
+		registry.registerRecipeFiller(
+				net.minecraft.recipe.CraftingRecipe.class,
+				RecipeType.CRAFTING,
+				recipe -> {
+					if (recipe instanceof ShatteringRecipe) return null;
+
+					if (recipe.getIngredients().size() != 1) return null;
+					if (recipe.getIngredients().get(0).isEmpty()) return null;
+
+					ItemStack out = recipe.getOutput();
+					if (out.isEmpty()) return null;
+
+					return ShatteringDisplay.ofWrappedCrafting(recipe);
+				}
+		);
+
+		registry.registerRecipeFiller(
+				TransmuteRecipe.class,
+				TransmuteRecipe.Type.INSTANCE,
+				recipe -> {
+					ItemStack out = recipe.getOutput();
+					if (out == null || out.isEmpty()) {
+						return null;
+					}
+					return new CreateDisplay<>(recipe, BULK_SHIMMERING);
+				}
+		);
 	}
+
 
 
 	@Override
