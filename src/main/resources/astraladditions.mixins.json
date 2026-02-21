@@ -28,8 +28,10 @@
 
     "fishing.FishingBobberEntityAccessor",
     "fishing.FishingBobberEntityMixin",
-    "fishing.BottomlessBucketItemMixin"
+    "fishing.BottomlessBucketItemMixin",
 
+    "knockback.AttackKnockbackCompatMixin",
+    "knockback.MobAttackKnockbackCompatMixin"
   ],
 
   "client": [
