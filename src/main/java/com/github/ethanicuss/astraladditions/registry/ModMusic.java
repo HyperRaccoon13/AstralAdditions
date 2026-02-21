@@ -2,6 +2,10 @@ package com.github.ethanicuss.astraladditions.registry;
 
 import net.minecraft.sound.MusicSound;
 
+import javax.annotation.Nullable;
+import java.util.IdentityHashMap;
+import java.util.Map;
+
 public class ModMusic {
     private static final int GAME_MIN_DELAY = 12000;
     private static final int GAME_MAX_DELAY = 24000;//12000, 24000
@@ -27,5 +31,45 @@ public class ModMusic {
     public static final MusicSound COMBAT_END         = new MusicSound(ModSounds.MUSIC_COMBAT_END, 0, 0, true);
     public static final MusicSound SHIMMER_BLAZE      = new MusicSound(ModSounds.MUSIC_SHIMMER_BLAZE, 0, 0, true);
     public static final MusicSound ASTRAL_LAKES_REMIX = new MusicSound(ModSounds.MUSIC_ASTRAL_LAKES_REMIX, 0, 0, true);
+
+
+	private static final Map<MusicSound, String> TRACK_KEYS = new IdentityHashMap<>();
+
+	static {
+		register(MOON,              "moon");
+		register(POST_MOON,         "post_moon");
+		register(DAY,               "day");
+		register(NIGHT,             "night");
+		register(OW_DAY,            "ow_day");
+		register(OW_NIGHT,          "ow_night");
+		register(OW_CAVE,           "ow_cave");
+		register(OW_SCARY,          "ow_scary");
+		register(ORBIT,             "orbit");
+		register(MERCURY,           "mercury");
+		register(MARS,              "mars");
+		register(END,               "end");
+		register(END_BOSS,          "end_boss");
+		register(WITHER,            "wither");
+		register(WITHER_PHASE2,     "wither_phase2");
+		register(WITHER_SPAWN,      "wither_spawn");
+		register(WITHER_DEATH,      "wither_death");
+		register(COMBAT,            "combat");
+		register(COMBAT_END,        "combat_end");
+		register(SHIMMER_BLAZE,     "shimmer_blaze");
+		register(ASTRAL_LAKES_REMIX,"astral_lakes_remix");
+	}
+
+	private static void register(MusicSound sound, String key) {
+		TRACK_KEYS.put(sound, key);
+	}
+
+	public static boolean isCustom(MusicSound sound) {
+		return TRACK_KEYS.containsKey(sound);
+	}
+
+	@Nullable
+	public static String getTrackKey(MusicSound sound) {
+		return TRACK_KEYS.get(sound);
+	}
 
 }

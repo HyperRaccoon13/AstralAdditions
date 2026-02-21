@@ -1,5 +1,6 @@
 package com.github.ethanicuss.astraladditions.musicplayer;
 
+import com.github.ethanicuss.astraladditions.AstralAdditions;
 import com.github.ethanicuss.astraladditions.AstralAdditionsClient;
 import com.github.ethanicuss.astraladditions.entities.shimmerblaze.ShimmerBlazeEntity;
 import com.github.ethanicuss.astraladditions.registry.ModMusic;
@@ -10,6 +11,8 @@ import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.sound.MusicSound;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.TypeFilter;
 import net.minecraft.util.math.Box;
 
@@ -18,6 +21,8 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public class MusicPlayer {
+    private static MusicSound lastShown = null;
+
     private static final Predicate<WitherEntity> WITHER_PREDICATE = (entity) -> {
         return true;
     };
@@ -218,6 +223,25 @@ public class MusicPlayer {
                 }
             }
         }
+        maybeShowNowPlaying(val, musicTracker);
         return val;
+    }
+
+    private static void maybeShowNowPlaying(MusicSound next, MusicTracker tracker) {
+        if (next == null || next == lastShown) return;
+
+        if (!ModMusic.isCustom(next)) {
+            lastShown = next;
+            return;
+        }
+
+        String key = ModMusic.getTrackKey(next);
+        if (key != null) {
+            Text title = new TranslatableText(AstralAdditions.MOD_ID + ".music." + key + ".title");
+            Text artist = new TranslatableText(AstralAdditions.MOD_ID + ".music." + key + ".artist");
+            NowPlayingHud.show(title, artist);
+        }
+
+        lastShown = next;
     }
 }

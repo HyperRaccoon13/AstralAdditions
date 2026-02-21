@@ -129,6 +129,72 @@
 	"item.minecraft.lingering_potion.effect.sputum": "Lingering Bottle of Sputum",
 	"item.minecraft.tipped_arrow.effect.sputum": "Arrow of Sputum",
 
-	"tooltip.astraladditions.cogfly": "W.I.P for 2.2"
+	"tooltip.astraladditions.cogfly": "W.I.P for 2.2",
+
+	"astraladditions.music.moon.title": "Moon",
+	"astraladditions.music.moon.artist": "idk",
+
+	"astraladditions.music.post_moon.title": "Post Moon",
+	"astraladditions.music.post_moon.artist": "idk",
+
+	"astraladditions.music.day.title": "Day",
+	"astraladditions.music.day.artist": "idk",
+
+	"astraladditions.music.night.title": "Night",
+	"astraladditions.music.night.artist": "idk",
+
+	"astraladditions.music.ow_day.title": "Overworld Day",
+	"astraladditions.music.ow_day.artist": "idk",
+
+	"astraladditions.music.ow_night.title": "Overworld Night",
+	"astraladditions.music.ow_night.artist": "idk",
+
+	"astraladditions.music.ow_cave.title": "Overworld Cave",
+	"astraladditions.music.ow_cave.artist": "idk",
+
+	"astraladditions.music.ow_scary.title": "Overworld Scary",
+	"astraladditions.music.ow_scary.artist": "idk",
+
+	"astraladditions.music.orbit.title": "Orbit",
+	"astraladditions.music.orbit.artist": "idk",
+
+	"astraladditions.music.mercury.title": "Mercury",
+	"astraladditions.music.mercury.artist": "idk",
+
+	"astraladditions.music.mars.title": "Mars",
+	"astraladditions.music.mars.artist": "idk",
+
+	"astraladditions.music.end.title": "End",
+	"astraladditions.music.end.artist": "idk",
+
+	"astraladditions.music.end_boss.title": "End Boss",
+	"astraladditions.music.end_boss.artist": "idk",
+
+	"astraladditions.music.wither.title": "Wither",
+	"astraladditions.music.wither.artist": "idk",
+
+	"astraladditions.music.wither_phase2.title": "Wither Phase 2",
+	"astraladditions.music.wither_phase2.artist": "idk",
+
+	"astraladditions.music.wither_spawn.title": "Wither Spawn",
+	"astraladditions.music.wither_spawn.artist": "idk",
+
+	"astraladditions.music.wither_death.title": "Wither Death",
+	"astraladditions.music.wither_death.artist": "idk",
+
+	"astraladditions.music.combat.title": "Combat",
+	"astraladditions.music.combat.artist": "idk",
+
+	"astraladditions.music.combat_end.title": "Combat End",
+	"astraladditions.music.combat_end.artist": "idk",
+
+	"astraladditions.music.shimmer_blaze.title": "Shimmer Blaze",
+	"astraladditions.music.shimmer_blaze.artist": "idk",
+
+	"astraladditions.music.astral_lakes_remix.title": "Astral Lakes Remix",
+	"astraladditions.music.astral_lakes_remix.artist": "idk"
+
+
+
 
 }
